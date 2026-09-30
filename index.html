@@ -10,9 +10,13 @@
   <body>
     <main class="game-shell">
       <section class="top-bar" aria-label="ゲーム情報">
-        <div>
-          <p class="kicker">Marry Go Round</p>
-          <h1 id="gameTitle">あと100年で全員佐藤さんになる恋愛ゲーム</h1>
+        <div class="brand-lockup">
+          <img class="brand-logo" src="performance-logo.png" alt="あと100年で日本人は全員佐藤さんになるらしい">
+          <div class="brand-copy">
+            <p class="kicker">Marry Go Round</p>
+            <p class="brand-subtitle">ブラウザ恋愛ゲーム</p>
+          </div>
+          <h1 class="sr-only" id="gameTitle">あと100年で全員佐藤さんになる恋愛ゲーム</h1>
         </div>
         <button class="icon-button" id="resetButton" type="button" title="最初から">
           <span aria-hidden="true">↺</span>
@@ -21,10 +25,6 @@
       </section>
 
       <section class="stage" id="stage" aria-live="polite">
-        <div class="show-logo-card">
-          <img src="performance-logo.png" alt="あと100年で日本人は全員佐藤さんになるらしい ロゴ">
-        </div>
-
         <div class="background-sign">
           <span>婚活相談所</span>
           <strong>Marry Go Round</strong>
