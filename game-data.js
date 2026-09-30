@@ -152,7 +152,7 @@ window.GAME_DATA = {
         }
       ],
       endingLines: {
-        happy: "次のデートはカナダかAmazonだ！ HAHAHA",
+        happy: "次のデートはカナダかアマゾンだ！ HAHAHA",
         good: "悪くない。だが冒険はまだ始まったばかりだ。",
         bad: "この視野では、世界の広さに耐えられないな。"
       }
