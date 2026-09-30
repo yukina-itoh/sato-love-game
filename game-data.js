@@ -42,7 +42,7 @@ window.GAME_DATA = {
           choices: [
             {
               text: "とても素敵な名前ですね",
-              reaction: "そうですかね…？ ちょっと照れています。",
+              reaction: "そうですかね…？",
               mood: -1
             },
             {
@@ -58,12 +58,12 @@ window.GAME_DATA = {
           choices: [
             {
               text: "ラーメンとか好きです",
-              reaction: "え！ 僕もラーメン好きです！ 替え玉の未来が見えました。",
+              reaction: "え！ 僕もラーメン好きです！",
               mood: 1,
               correct: true
             },
             {
-              text: "とか好きです",
+              text: "〇〇とか好きです",
               reaction: "僕、『とか』そのものはちょっと苦手なんですよね。",
               mood: -1
             }
@@ -87,9 +87,9 @@ window.GAME_DATA = {
         }
       ],
       endingLines: {
-        happy: "今度ご飯でも行きましょう。ご飯楽しみだな、佐藤さんも良い人だったし。",
-        good: "今日は楽しかったです。ありがとうございました。連絡、来なかったなぁ。",
-        bad: "そんな人だとは思いませんでした。そんなぁ…。"
+        happy: "僕たち気が合いますね！今度ご飯でも行きましょう。「ご飯楽しみだな、佐藤さんも良い人だったし。（ドクン）これって、もしかして……」",
+        good: "今日は楽しかったです。ありがとうございました。「……連絡、来なかったなぁ。」",
+        bad: "そんな人だとは思いませんでした。この話はなかったことに。「そんなぁ…。」"
       }
     },
     {
@@ -99,7 +99,7 @@ window.GAME_DATA = {
       tag: "冒険家。笑い声はHA HA HA",
       portrait: "teshigawara",
       color: "#2c7f68",
-      stats: ["冒険値 MAX", "Amazon依存度 低", "海外経験 あり"],
+      stats: ["冒険値 MAX", "アマゾン依存度 低", "海外経験 あり"],
       opening: "初めまして。私は勅使河原俊紀です。",
       questions: [
         {
@@ -123,7 +123,7 @@ window.GAME_DATA = {
           choices: [
             {
               text: "ハーバリウム作りです！",
-              reaction: "そんなんじゃAmazonで生き残れないぞ！",
+              reaction: "そんなんじゃアマゾンで生き残れないぞ！",
               mood: -1
             },
             {
@@ -139,7 +139,7 @@ window.GAME_DATA = {
           choices: [
             {
               text: "あります！ 次はカナダに行きたいです！",
-              reaction: "素晴らしい！ 私も先日までAmazonにいてね…。",
+              reaction: "素晴らしい！ 私も先日までアマゾンにいてね…。",
               mood: 1,
               correct: true
             },
