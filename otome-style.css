@@ -846,6 +846,11 @@ code {
   box-shadow: 0 7px 0 rgba(43, 28, 38, 0.28);
 }
 
+.stage.is-route-active .primary-button {
+  justify-self: center;
+  width: min(260px, 100%);
+}
+
 .stage.is-route-active .choice-button:hover,
 .stage.is-route-active .primary-button:hover {
   background: linear-gradient(135deg, #fff, #ffdcec);
@@ -871,23 +876,28 @@ code {
   }
 
   .stage.is-route-active {
-    min-height: 570px;
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
     padding: 14px;
+    overflow: hidden;
   }
 
   .stage.is-route-active .background-sign {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    width: auto;
-    margin: 0;
+    position: relative;
+    inset: auto;
+    width: min(100%, 260px);
+    margin: 0 0 10px;
   }
 
   .stage.is-route-active .character-card {
-    left: 50%;
-    bottom: 218px;
+    position: relative;
+    left: auto;
+    bottom: auto;
+    align-self: center;
     width: min(360px, 90%);
     grid-template-columns: 1fr;
+    transform: none;
   }
 
   .stage.is-route-active .portrait {
@@ -932,9 +942,12 @@ code {
   }
 
   .stage.is-route-active .dialogue-panel {
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: -24px;
   }
 
   .stage.is-route-active .message-box {
@@ -944,5 +957,10 @@ code {
 
   .stage.is-route-active .choices {
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .stage.is-route-active .primary-button {
+    width: min(260px, 82%);
   }
 }
