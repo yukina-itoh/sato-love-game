@@ -851,6 +851,10 @@ code {
   width: min(260px, 100%);
 }
 
+.stage.is-route-active .primary-button:only-child {
+  grid-column: 1 / -1;
+}
+
 .stage.is-route-active .choice-button:hover,
 .stage.is-route-active .primary-button:hover {
   background: linear-gradient(135deg, #fff, #ffdcec);
@@ -957,7 +961,10 @@ code {
 
   .stage.is-route-active .choices {
     grid-template-columns: 1fr;
-    justify-items: center;
+  }
+
+  .stage.is-route-active .choice-button {
+    width: 100%;
   }
 
   .stage.is-route-active .primary-button {
