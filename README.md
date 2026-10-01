@@ -30,4 +30,5 @@ GitHub上で `game-data.js` を編集して `Commit changes` すると、GitHub 
 
 ## URL
 初期版：https://yukina-itoh.github.io/sato-love-game/
+
 乙女ゲーム版：https://yukina-itoh.github.io/sato-love-game/otome.html
