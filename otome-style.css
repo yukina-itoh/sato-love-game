@@ -651,3 +651,298 @@ code {
     min-height: 190px;
   }
 }
+
+.stage.is-route-active {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  min-height: 720px;
+  padding: 24px 28px;
+  background:
+    linear-gradient(rgba(52, 31, 58, 0.1), rgba(79, 36, 62, 0.24)),
+    radial-gradient(circle at 50% 26%, rgba(255, 255, 255, 0.9), transparent 16rem),
+    linear-gradient(135deg, #fff8fb, #eadcf6 44%, #dcefea);
+}
+
+.stage.is-route-active::after {
+  top: auto;
+  bottom: 286px;
+  left: 0;
+  right: 0;
+  height: 86px;
+  background:
+    linear-gradient(transparent, rgba(70, 50, 56, 0.1)),
+    radial-gradient(circle at 18% 100%, rgba(255, 255, 255, 0.76), transparent 12rem),
+    radial-gradient(circle at 82% 100%, rgba(255, 255, 255, 0.56), transparent 13rem);
+  opacity: 1;
+}
+
+.stage.is-route-active .background-sign {
+  top: 24px;
+  left: 26px;
+  right: auto;
+  width: auto;
+  min-width: 210px;
+  padding: 8px 14px;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0 0 14px 0;
+  color: #fff;
+  background: linear-gradient(90deg, rgba(50, 31, 48, 0.8), rgba(80, 43, 70, 0.52));
+  box-shadow: none;
+  transform: none;
+}
+
+.stage.is-route-active .background-sign span {
+  color: #ffd6e8;
+}
+
+.stage.is-route-active .background-sign strong {
+  color: #fff;
+  font-size: 1.12rem;
+}
+
+.stage.is-route-active .character-card {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 214px;
+  width: min(440px, 46vw);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.stage.is-route-active .profile {
+  display: none;
+}
+
+.stage.is-route-active .portrait {
+  min-height: 444px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+  filter: drop-shadow(0 18px 24px rgba(58, 34, 48, 0.24));
+}
+
+.stage.is-route-active .portrait::before {
+  bottom: 0;
+  width: 230px;
+  height: 292px;
+  border-width: 4px;
+  border-radius: 106px 106px 28px 28px;
+}
+
+.stage.is-route-active .portrait::after {
+  bottom: -14px;
+  width: 340px;
+  height: 92px;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.72), transparent 70%);
+}
+
+.stage.is-route-active .face {
+  width: 184px;
+  height: 184px;
+  margin-bottom: 222px;
+  border-width: 4px;
+}
+
+.stage.is-route-active .eye {
+  top: 72px;
+  width: 15px;
+  height: 15px;
+}
+
+.stage.is-route-active .eye.left {
+  left: 54px;
+}
+
+.stage.is-route-active .eye.right {
+  right: 54px;
+}
+
+.stage.is-route-active .mouth {
+  bottom: 47px;
+  width: 44px;
+  height: 18px;
+  border-bottom-width: 4px;
+}
+
+.stage.is-route-active .dialogue-panel {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 24px;
+  z-index: 4;
+  display: grid;
+  gap: 10px;
+  min-height: 0;
+}
+
+.stage.is-route-active .progress-row {
+  min-height: 26px;
+  padding: 0 8px;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 3px rgba(58, 34, 48, 0.45);
+}
+
+.stage.is-route-active .message-box {
+  min-height: 152px;
+  padding: 30px 30px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 0;
+  color: #fff;
+  background:
+    linear-gradient(rgba(54, 31, 45, 0.82), rgba(80, 42, 58, 0.78)),
+    rgba(54, 31, 45, 0.82);
+  box-shadow:
+    inset 0 0 0 1px rgba(198, 154, 70, 0.45),
+    0 18px 40px rgba(43, 28, 38, 0.32);
+}
+
+.stage.is-route-active .message-box::before,
+.stage.is-route-active .message-box::after {
+  border-color: rgba(255, 214, 232, 0.82);
+}
+
+.stage.is-route-active .speaker {
+  position: absolute;
+  top: -18px;
+  left: 28px;
+  min-width: 150px;
+  justify-content: center;
+  margin: 0;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 0;
+  color: #fff;
+  background: linear-gradient(90deg, rgba(72, 37, 56, 0.95), rgba(150, 79, 115, 0.92));
+  box-shadow: 0 8px 20px rgba(43, 28, 38, 0.28);
+}
+
+.stage.is-route-active .message {
+  padding-top: 4px;
+  font-size: clamp(1.05rem, 2.2vw, 1.32rem);
+  line-height: 1.85;
+  text-shadow: 0 1px 2px rgba(43, 28, 38, 0.4);
+}
+
+.stage.is-route-active .choices {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.stage.is-route-active .choice-button,
+.stage.is-route-active .primary-button {
+  min-height: 54px;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(216, 95, 143, 0.94), rgba(106, 70, 81, 0.94));
+  box-shadow: 0 7px 0 rgba(43, 28, 38, 0.28);
+}
+
+.stage.is-route-active .choice-button:hover,
+.stage.is-route-active .primary-button:hover {
+  background: linear-gradient(135deg, #fff, #ffdcec);
+  color: var(--line);
+}
+
+@media (max-width: 820px) {
+  body.route-active .top-bar {
+    min-height: auto;
+    padding: 2px 0 8px;
+  }
+
+  body.route-active .brand-logo {
+    width: min(112px, 30vw);
+  }
+
+  body.route-active .brand-title {
+    font-size: clamp(1rem, 5vw, 1.45rem);
+  }
+
+  body.route-active .brand-note {
+    display: none;
+  }
+
+  .stage.is-route-active {
+    min-height: 570px;
+    padding: 14px;
+  }
+
+  .stage.is-route-active .background-sign {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: auto;
+    margin: 0;
+  }
+
+  .stage.is-route-active .character-card {
+    left: 50%;
+    bottom: 218px;
+    width: min(360px, 90%);
+    grid-template-columns: 1fr;
+  }
+
+  .stage.is-route-active .portrait {
+    min-height: 280px;
+  }
+
+  .stage.is-route-active .portrait::before {
+    bottom: 0;
+    width: 140px;
+    height: 180px;
+  }
+
+  .stage.is-route-active .portrait::after {
+    width: 250px;
+    height: 70px;
+  }
+
+  .stage.is-route-active .face {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 138px;
+  }
+
+  .stage.is-route-active .eye {
+    top: 44px;
+    width: 9px;
+    height: 9px;
+  }
+
+  .stage.is-route-active .eye.left {
+    left: 33px;
+  }
+
+  .stage.is-route-active .eye.right {
+    right: 33px;
+  }
+
+  .stage.is-route-active .mouth {
+    bottom: 29px;
+    width: 28px;
+    height: 12px;
+  }
+
+  .stage.is-route-active .dialogue-panel {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .stage.is-route-active .message-box {
+    min-height: 130px;
+    padding: 26px 18px 18px;
+  }
+
+  .stage.is-route-active .choices {
+    grid-template-columns: 1fr;
+  }
+}
