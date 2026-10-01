@@ -29,6 +29,5 @@ GitHub Pagesでそのまま公開できる静的サイトです。
 GitHub上で `game-data.js` を編集して `Commit changes` すると、GitHub Pagesの公開ページも自動で更新されます。
 
 ## URL
-初期版：https://yukina-itoh.github.io/sato-love-game/
-
-乙女ゲーム版：https://yukina-itoh.github.io/sato-love-game/otome.html
+- 初期版：https://yukina-itoh.github.io/sato-love-game/
+- 乙女ゲーム版：https://yukina-itoh.github.io/sato-love-game/otome.html
