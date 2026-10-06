@@ -33,7 +33,7 @@ window.GAME_DATA = {
       fullName: "佐藤太郎",
       tag: "普通を愛する、普通以上に普通な人",
       portrait: "sato",
-      standingImage: "sato-standing.png",
+      standingImage: "sato-bust.png",
       color: "#d84f4f",
       stats: ["佐藤濃度 92%", "ラーメン耐性 高", "Netflix 未加入"],
       opening: "はじめまして。僕は佐藤太郎です。",

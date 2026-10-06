@@ -243,12 +243,7 @@ p {
 }
 
 .portrait.has-portrait-art {
-  --portrait-art-width: 100%;
-  --portrait-art-height: 100%;
-  --portrait-art-fit: contain;
-  --portrait-art-position: center bottom;
-  --portrait-art-transform: none;
-  place-items: start center;
+  place-items: center;
 }
 
 .portrait.has-portrait-art::before,
@@ -259,20 +254,10 @@ p {
 
 .portrait-art {
   display: block;
-  flex: 0 0 auto;
-  width: var(--portrait-art-width);
-  height: var(--portrait-art-height);
-  max-width: none;
-  max-height: none;
-  object-fit: var(--portrait-art-fit);
-  object-position: var(--portrait-art-position);
-  transform: var(--portrait-art-transform);
-}
-
-.portrait-sato.has-portrait-art {
-  --portrait-art-width: auto;
-  --portrait-art-height: 520px;
-  --portrait-art-position: center top;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .face {
@@ -763,14 +748,13 @@ code {
 .stage.is-route-active .portrait.has-portrait-art {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  overflow: hidden;
+  align-items: flex-end;
 }
 
 .stage.is-route-active .portrait.has-portrait-art .portrait-art {
-  width: auto;
-  height: 900px;
-  max-height: none;
+  width: min(430px, 100%);
+  height: auto;
+  max-height: 520px;
 }
 
 .stage.is-route-active .portrait::before {
@@ -955,9 +939,8 @@ code {
   }
 
   .stage.is-route-active .portrait.has-portrait-art .portrait-art {
-    width: auto;
-    height: 520px;
-    max-height: none;
+    width: min(260px, 86%);
+    max-height: 330px;
   }
 
   .stage.is-route-active .portrait::before {
