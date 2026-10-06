@@ -55,7 +55,21 @@ function setProfile(character) {
   setAccent(display.color);
   document.body.classList.toggle("route-active", active);
   els.stage.classList.toggle("is-route-active", active);
-  els.portrait.className = `portrait portrait-${display.portrait}`;
+  els.portrait.className = `portrait portrait-${display.portrait}${display.standingImage ? " has-portrait-art" : ""}`;
+  let art = els.portrait.querySelector(".portrait-art");
+  if (!art) {
+    art = document.createElement("img");
+    art.className = "portrait-art";
+    art.alt = "";
+    els.portrait.append(art);
+  }
+  if (display.standingImage) {
+    art.src = display.standingImage;
+    art.hidden = false;
+  } else {
+    art.removeAttribute("src");
+    art.hidden = true;
+  }
   els.profileLabel.textContent = active ? "攻略対象" : "相談所";
   els.characterName.textContent = active ? display.fullName : "Marry Go Round";
   els.characterTag.textContent = display.tag;

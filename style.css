@@ -201,6 +201,24 @@ h1 {
   background: #fff;
 }
 
+.portrait.has-portrait-art {
+  place-items: center;
+}
+
+.portrait.has-portrait-art::before,
+.portrait.has-portrait-art::after,
+.portrait.has-portrait-art .face {
+  display: none;
+}
+
+.portrait-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
 .face {
   position: relative;
   z-index: 1;
