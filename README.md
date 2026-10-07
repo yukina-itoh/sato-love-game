@@ -26,6 +26,17 @@ GitHub PagesやNetlifyでそのまま公開できる静的サイトです。
 - 正解を変える: `correct: true`
 - エンディング文を変える: `endingLines`
 
+`endingLines` の `happy`・`good`・`bad` は、次のように段落ごとに分けて書けます。
+
+```js
+happy: [
+  "佐藤「今度ご飯でも行きましょう。」",
+  "私「楽しみ！」"
+]
+```
+
+1つの文字列が1段落になります。行動なら `"私は走って逃げた。"` のように書き、カギ括弧は付けません。これまでの1つの文字列で書く形式も表示できます。
+
 GitHub上で `game-data.js` を編集して `Commit changes` すると、GitHub Pagesの公開ページも自動で更新されます。
 
 ## Netlifyで公開

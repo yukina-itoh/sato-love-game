@@ -190,12 +190,13 @@ function showEnding() {
   const total = character.questions.length;
   const key = state.correct === total ? "happy" : state.correct === 0 ? "bad" : "good";
   const ending = GAME_DATA.endings[key];
-  const line = character.endingLines[key];
+  const lines = character.endingLines[key];
+  const line = Array.isArray(lines) ? lines.join("\n\n") : lines;
   const note = ending.note || `${state.correct}問正解`;
 
   setDialogue({
     speaker: ending.label,
-    message: `${ending.title} (${note})\n\n${ending.text}\n\n${character.name}: 「${line}」`,
+    message: `${ending.title} (${note})\n\n${ending.text}\n\n${line}`,
     scene: `${character.name} エンディング`,
     score: `正解 ${state.correct} / ${total}`
   });
