@@ -537,7 +537,7 @@ code {
 
   .brand-logo-link {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 1 / span 2;
   }
 
   .brand-logo {
@@ -545,7 +545,7 @@ code {
   }
 
   .kicker {
-    grid-column: 1 / -1;
+    grid-column: 2;
     grid-row: 1;
     margin-bottom: 0;
   }
