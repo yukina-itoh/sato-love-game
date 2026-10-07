@@ -732,6 +732,10 @@ code {
   pointer-events: none;
 }
 
+.stage.is-route-active .character-card:has(.portrait-sato.has-portrait-art) {
+  width: min(680px, 72vw);
+}
+
 .stage.is-route-active .profile {
   display: none;
 }
@@ -755,6 +759,12 @@ code {
   width: min(430px, 100%);
   height: auto;
   max-height: 520px;
+}
+
+.stage.is-route-active .portrait-sato.has-portrait-art .portrait-art {
+  flex: none;
+  width: min(660px, 100%);
+  max-height: none;
 }
 
 .stage.is-route-active .portrait::before {
@@ -934,6 +944,11 @@ code {
     transform: none;
   }
 
+  .stage.is-route-active .character-card:has(.portrait-sato.has-portrait-art) {
+    width: 100%;
+    margin-bottom: -48px;
+  }
+
   .stage.is-route-active .portrait {
     min-height: 280px;
   }
@@ -941,6 +956,11 @@ code {
   .stage.is-route-active .portrait.has-portrait-art .portrait-art {
     width: min(260px, 86%);
     max-height: 330px;
+  }
+
+  .stage.is-route-active .portrait-sato.has-portrait-art .portrait-art {
+    width: min(480px, 135%);
+    max-height: none;
   }
 
   .stage.is-route-active .portrait::before {
