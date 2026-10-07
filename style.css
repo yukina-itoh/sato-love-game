@@ -219,6 +219,20 @@ h1 {
   object-position: center bottom;
 }
 
+.portrait-sato.has-portrait-art {
+  width: 100%;
+  aspect-ratio: 571 / 454;
+}
+
+/* Match the previous 571x454 bust frame at x=323 in the 1240px source. */
+.portrait-sato.has-portrait-art .portrait-art {
+  position: absolute;
+  top: 0;
+  left: -56.5674%;
+  width: 217.163%;
+  height: auto;
+}
+
 .face {
   position: relative;
   z-index: 1;

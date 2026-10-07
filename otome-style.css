@@ -260,6 +260,20 @@ p {
   object-position: center bottom;
 }
 
+.portrait-sato.has-portrait-art {
+  width: 100%;
+  aspect-ratio: 571 / 454;
+}
+
+/* Match the previous 571x454 bust frame at x=323 in the 1240px source. */
+.portrait-sato.has-portrait-art .portrait-art {
+  position: absolute;
+  top: 0;
+  left: -56.5674%;
+  width: 217.163%;
+  height: auto;
+}
+
 .face {
   position: relative;
   z-index: 1;
@@ -761,9 +775,15 @@ code {
   max-height: 520px;
 }
 
+.stage.is-route-active .portrait-sato.has-portrait-art {
+  justify-self: center;
+  width: min(660px, 100%);
+  min-height: 0;
+}
+
 .stage.is-route-active .portrait-sato.has-portrait-art .portrait-art {
   flex: none;
-  width: min(660px, 100%);
+  width: 217.163%;
   max-height: none;
 }
 
@@ -958,8 +978,12 @@ code {
     max-height: 330px;
   }
 
-  .stage.is-route-active .portrait-sato.has-portrait-art .portrait-art {
+  .stage.is-route-active .portrait-sato.has-portrait-art {
     width: min(480px, 135%);
+  }
+
+  .stage.is-route-active .portrait-sato.has-portrait-art .portrait-art {
+    width: 217.163%;
     max-height: none;
   }
 
