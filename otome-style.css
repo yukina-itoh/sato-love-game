@@ -96,7 +96,7 @@ button {
 
 .kicker {
   margin: 0 0 5px;
-  color: var(--accent);
+  color: var(--muted);
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: 400;
