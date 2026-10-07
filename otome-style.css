@@ -54,6 +54,10 @@ button {
   min-width: 0;
 }
 
+.brand-copy {
+  min-width: 0;
+}
+
 .brand-logo {
   display: block;
   flex: 0 0 auto;
@@ -93,11 +97,12 @@ button {
 .kicker {
   margin: 0 0 5px;
   color: var(--accent);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: inherit;
   font-size: 0.82rem;
-  font-style: italic;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 h1,
@@ -948,7 +953,7 @@ code {
 
   body.route-active .game-shell {
     display: grid;
-    grid-template-rows: 64px auto;
+    grid-template-rows: minmax(64px, max-content) auto;
     gap: 10px;
     min-height: 100svh;
     padding: max(8px, env(safe-area-inset-top)) env(safe-area-inset-right) max(8px, env(safe-area-inset-bottom)) env(safe-area-inset-left);
@@ -1132,7 +1137,7 @@ code {
 
 @media (max-width: 920px) and (max-height: 650px) and (orientation: portrait) {
   body.route-active .game-shell {
-    grid-template-rows: 48px auto;
+    grid-template-rows: minmax(48px, max-content) auto;
   }
 
   .stage.is-route-active .portrait:not(.has-portrait-art) {
@@ -1169,7 +1174,7 @@ code {
 
 @media (max-width: 920px) and (orientation: landscape) {
   body.route-active .game-shell {
-    grid-template-rows: 48px auto;
+    grid-template-rows: minmax(48px, max-content) auto;
     gap: 6px;
   }
 
