@@ -288,6 +288,10 @@ p {
   object-position: center bottom;
 }
 
+.portrait-art[hidden] {
+  display: none;
+}
+
 .portrait-sato.has-portrait-art {
   width: 100%;
   aspect-ratio: 571 / 454;
