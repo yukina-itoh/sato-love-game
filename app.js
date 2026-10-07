@@ -80,11 +80,16 @@ function setProfile(character) {
       return li;
     })
   );
+  if (active && window.matchMedia("(max-width: 820px), (pointer: coarse) and (max-height: 520px)").matches) {
+    window.scrollTo(0, 0);
+  }
 }
 
 function setDialogue({ speaker, message, scene, score }) {
   els.speaker.textContent = speaker;
   els.message.textContent = message;
+  els.message.scrollTop = 0;
+  els.choices.scrollTop = 0;
   els.sceneLabel.textContent = scene;
   els.scoreLabel.textContent = score;
 }
