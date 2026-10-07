@@ -80,7 +80,7 @@ function setProfile(character) {
       return li;
     })
   );
-  if (active && window.matchMedia("(max-width: 820px), (pointer: coarse) and (max-height: 520px)").matches) {
+  if (active && window.matchMedia("(max-width: 920px)").matches) {
     window.scrollTo(0, 0);
   }
 }
