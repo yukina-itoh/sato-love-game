@@ -7,6 +7,7 @@ const state = {
 
 const els = {
   title: document.querySelector("#gameTitle"),
+  home: document.querySelector("#homeButton"),
   reset: document.querySelector("#resetButton"),
   stage: document.querySelector("#stage"),
   portrait: document.querySelector("#portrait"),
@@ -207,4 +208,8 @@ function showEnding() {
 }
 
 els.reset.addEventListener("click", showStart);
+els.home.addEventListener("click", () => {
+  showStart();
+  window.scrollTo(0, 0);
+});
 showStart();
