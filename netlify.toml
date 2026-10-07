@@ -1,0 +1,13 @@
+[build]
+  command = ""
+  publish = "."
+
+[build.processing.html]
+  pretty_urls = false
+
+# Use the otome design at Netlify's root without changing GitHub Pages.
+[[redirects]]
+  from = "/"
+  to = "/otome.html"
+  status = 200
+  force = true

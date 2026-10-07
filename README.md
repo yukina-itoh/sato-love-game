@@ -1,6 +1,6 @@
 # 佐藤さん恋愛ゲーム
 
-GitHub Pagesでそのまま公開できる静的サイトです。
+GitHub PagesやNetlifyでそのまま公開できる静的サイトです。
 
 ## 公開方法
 
@@ -28,6 +28,21 @@ GitHub Pagesでそのまま公開できる静的サイトです。
 
 GitHub上で `game-data.js` を編集して `Commit changes` すると、GitHub Pagesの公開ページも自動で更新されます。
 
+## Netlifyで公開
+
+1. Netlifyにログインし、利用プランはFree（無料）を選びます。
+2. `Add new project` → `Import an existing project` からGitHubを選びます。
+3. `sato-love-game` リポジトリの `main` ブランチを選びます。
+4. デプロイします。`netlify.toml` に公開設定が入っているので、ビルドは不要です。
+5. 完了後に `Make public` を開き、希望するプロジェクト名を設定して一般公開します。名前が利用可能なら `希望する名前.netlify.app` が共有用URLになります。
+
+`Private` のままでは、URLを知っていても一般の人は遊べません。一般公開後は、Netlifyへのログインなしで遊べます。
+
+Netlifyでは乙女ゲーム版がトップページに表示されます。通常版は `index.html` から開けます。GitHub Pagesの既存URLは変わりません。
+
+連携後は、GitHubでファイルを編集してコミットするとNetlifyも自動更新されます。無料枠には利用量の上限があります。
+
 ## URL
+- Netlify（乙女ゲーム版）：https://gekidannoro-shidaisai2026.netlify.app/
 - 初期版：https://yukina-itoh.github.io/sato-love-game/
 - 乙女ゲーム版：https://yukina-itoh.github.io/sato-love-game/otome.html
