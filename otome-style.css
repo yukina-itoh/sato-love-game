@@ -260,12 +260,6 @@ p {
   object-position: center bottom;
 }
 
-/* Frame the bust without the source image's wide transparent margins. */
-.portrait-sato.has-portrait-art .portrait-art {
-  object-fit: cover;
-  object-position: 49% bottom;
-}
-
 .face {
   position: relative;
   z-index: 1;
@@ -763,10 +757,6 @@ code {
   max-height: 520px;
 }
 
-.stage.is-route-active .portrait-sato.has-portrait-art .portrait-art {
-  height: 520px;
-}
-
 .stage.is-route-active .portrait::before {
   bottom: 0;
   width: 230px;
@@ -951,10 +941,6 @@ code {
   .stage.is-route-active .portrait.has-portrait-art .portrait-art {
     width: min(260px, 86%);
     max-height: 330px;
-  }
-
-  .stage.is-route-active .portrait-sato.has-portrait-art .portrait-art {
-    height: 330px;
   }
 
   .stage.is-route-active .portrait::before {

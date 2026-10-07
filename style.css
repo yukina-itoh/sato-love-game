@@ -219,12 +219,6 @@ h1 {
   object-position: center bottom;
 }
 
-/* Frame the bust without the source image's wide transparent margins. */
-.portrait-sato.has-portrait-art .portrait-art {
-  object-fit: cover;
-  object-position: 49% bottom;
-}
-
 .face {
   position: relative;
   z-index: 1;
