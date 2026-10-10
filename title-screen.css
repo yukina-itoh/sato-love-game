@@ -1,0 +1,100 @@
+body.title-active {
+  min-height: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #f9fdfe;
+}
+
+.title-screen[hidden],
+.game-shell[hidden] {
+  display: none;
+}
+
+.title-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  overflow: clip;
+  background: #f9fdfe;
+}
+
+/* Fit the height without zooming into the artwork; crop only the sides. */
+.title-screen-art {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.title-start {
+  position: absolute;
+  left: 50%;
+  bottom: max(8%, calc(env(safe-area-inset-bottom) + 16px));
+  width: min(320px, calc(100% - 56px));
+  min-height: 68px;
+  padding: 10px 24px;
+  border: 5px double #f9dda2;
+  border-radius: 8px;
+  outline: 1px solid #a97528;
+  outline-offset: 2px;
+  color: #fff;
+  background: linear-gradient(#eb3b53, #b91834);
+  box-shadow: inset 0 0 0 1px #a81b31, 0 6px 18px rgba(100, 23, 42, 0.28);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-shadow: 0 2px 2px rgba(86, 13, 29, 0.45);
+  transform: translateX(-50%);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.title-start::before,
+.title-start::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 4px);
+  width: 8px;
+  height: 8px;
+  border: 1px solid #a97528;
+  background: #f9dda2;
+  transform: rotate(45deg);
+}
+
+.title-start::before {
+  left: 9px;
+}
+
+.title-start::after {
+  right: 9px;
+}
+
+.title-start:hover {
+  background: linear-gradient(#f14b60, #cc1d3a);
+}
+
+.title-start:active {
+  background: #b91834;
+}
+
+.title-start:focus-visible {
+  outline: 3px solid #75132a;
+  outline-offset: 5px;
+}
+
+@media (max-height: 480px) {
+  .title-start {
+    min-height: 54px;
+    padding: 6px 24px;
+    font-size: 22px;
+  }
+}

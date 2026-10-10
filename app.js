@@ -6,6 +6,9 @@ const state = {
 };
 
 const els = {
+  titleScreen: document.querySelector("#titleScreen"),
+  start: document.querySelector("#startButton"),
+  shell: document.querySelector("#gameShell"),
   title: document.querySelector("#gameTitle"),
   home: document.querySelector("#homeButton"),
   reset: document.querySelector("#resetButton"),
@@ -96,6 +99,9 @@ function setDialogue({ speaker, message, scene, score }) {
 }
 
 function showStart() {
+  els.titleScreen.hidden = true;
+  els.shell.hidden = false;
+  document.body.classList.remove("title-active");
   state.character = null;
   state.questionIndex = 0;
   state.correct = 0;
@@ -118,6 +124,14 @@ function showStart() {
       )
     )
   );
+}
+
+function showTitle() {
+  showStart();
+  els.titleScreen.hidden = false;
+  els.shell.hidden = true;
+  document.body.classList.add("title-active");
+  window.scrollTo(0, 0);
 }
 
 function startRoute(id) {
@@ -208,9 +222,16 @@ function showEnding() {
   );
 }
 
-els.reset.addEventListener("click", showStart);
-els.home.addEventListener("click", () => {
+els.start.addEventListener("click", () => {
   showStart();
-  window.scrollTo(0, 0);
+  els.choices.querySelector("button")?.focus({ preventScroll: true });
 });
-showStart();
+els.reset.addEventListener("click", () => {
+  showTitle();
+  els.start.focus({ preventScroll: true });
+});
+els.home.addEventListener("click", () => {
+  showTitle();
+  els.start.focus({ preventScroll: true });
+});
+showTitle();

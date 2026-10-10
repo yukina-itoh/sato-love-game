@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>あと100年で全員佐藤さんになる恋愛ゲーム 乙女デザイン案</title>
     <link rel="stylesheet" href="otome-style.css?v=20261010-standing-art">
+    <link rel="stylesheet" href="title-screen.css?v=20261010-title-screen">
   </head>
-  <body>
-    <main class="game-shell">
+  <body class="title-active">
+    <section class="title-screen" id="titleScreen" aria-label="タイトル画面">
+      <img class="title-screen-art" src="title-screen.png?v=20261010" alt="あと100年で日本人は全員佐藤さんになるらしい" width="1240" height="1754" fetchpriority="high">
+      <button class="title-start" id="startButton" type="button">ゲームスタート</button>
+    </section>
+    <main class="game-shell" id="gameShell" hidden>
       <section class="top-bar" aria-label="ゲーム情報">
         <a class="classic-link" href="index.html">通常版</a>
         <div class="brand-lockup">
@@ -64,6 +69,6 @@
     </main>
 
     <script src="game-data.js?v=20261010-standing-art"></script>
-    <script src="app.js?v=20261007-ending-dialogue"></script>
+    <script src="app.js?v=20261010-title-screen"></script>
   </body>
 </html>

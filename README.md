@@ -10,6 +10,8 @@ GitHub PagesやNetlifyでそのまま公開できる静的サイトです。
    - `style.css`
    - `app.js`
    - `game-data.js`
+   - `title-screen.css`
+   - `title-screen.png`
    - `.nojekyll`
 3. リポジトリの `Settings` → `Pages` を開きます。
 4. `Build and deployment` の `Source` を `Deploy from a branch` にします。
@@ -19,6 +21,8 @@ GitHub PagesやNetlifyでそのまま公開できる静的サイトです。
 ## 編集方法
 
 ゲーム内容を変えるときは、基本的に `game-data.js` だけ編集します。
+
+タイトル画面の画像は `title-screen.png`、赤いスタートボタンの色・位置・大きさは `title-screen.css` で変更できます。画像は画面の高さに合わせて表示し、スマホでは左右だけを切ります。「ゲームスタート」で相手選択へ進み、ヘッダーのタイトルや「最初から」でタイトル画面に戻ります。
 
 - 攻略対象を変える: `characters`
 - 質問を変える: `questions`
