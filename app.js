@@ -112,7 +112,7 @@ function showStart() {
   els.stage.classList.remove("is-ending");
   const illustrated = document.body.classList.contains("royal-theme");
   els.stage.classList.toggle("is-selecting", illustrated);
-  els.salonLabel.textContent = illustrated ? "結婚相談所" : "private salon";
+  if (illustrated) els.salonLabel.textContent = "結婚相談所";
   els.title.textContent = GAME_DATA.title;
   setProfile(null);
   setDialogue({
@@ -214,7 +214,7 @@ function startRoute(id) {
   state.answered = false;
   els.stage.classList.remove("is-ending");
   els.stage.classList.remove("is-selecting");
-  els.salonLabel.textContent = "private salon";
+  if (document.body.classList.contains("royal-theme")) els.salonLabel.textContent = "private salon";
   setProfile(character);
   els.choices.className = "choices";
   setDialogue({
