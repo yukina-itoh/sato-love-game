@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 148" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="10" x2="0" y2="138" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff3bf"/>
+      <stop offset=".23" stop-color="#e5b84d"/>
+      <stop offset=".5" stop-color="#fff0a8"/>
+      <stop offset=".73" stop-color="#b07824"/>
+      <stop offset="1" stop-color="#f8db84"/>
+    </linearGradient>
+    <linearGradient id="gem" x1="250" y1="13" x2="270" y2="35" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eefcff"/>
+      <stop offset=".5" stop-color="#9ddbea"/>
+      <stop offset="1" stop-color="#438eae"/>
+    </linearGradient>
+    <g id="scrollwork" stroke="url(#gold)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M45 78C20 61 8 38 25 26C41 15 60 29 51 41C45 48 33 40 39 35M40 55C14 60 9 89 25 98C39 106 51 89 40 83C34 80 30 87 34 90M31 96C14 111 27 135 48 123C61 115 52 103 46 111" stroke="#8e6428" stroke-width="6"/>
+      <path d="M45 78C20 61 8 38 25 26C41 15 60 29 51 41C45 48 33 40 39 35M40 55C14 60 9 89 25 98C39 106 51 89 40 83C34 80 30 87 34 90M31 96C14 111 27 135 48 123C61 115 52 103 46 111" stroke-width="3.5"/>
+      <path d="M57 39C56 13 79 8 86 24C91 36 73 42 70 30C68 24 77 22 78 27M79 37C105 29 105 8 125 12C143 15 133 34 124 28C119 25 125 20 128 23M49 109C65 135 95 138 109 121C122 106 100 97 94 109C90 117 99 121 102 115" stroke="#8e6428" stroke-width="5"/>
+      <path d="M57 39C56 13 79 8 86 24C91 36 73 42 70 30C68 24 77 22 78 27M79 37C105 29 105 8 125 12C143 15 133 34 124 28C119 25 125 20 128 23M49 109C65 135 95 138 109 121C122 106 100 97 94 109C90 117 99 121 102 115" stroke-width="3"/>
+      <path d="M111 36C145 33 162 18 187 25C207 31 221 28 242 25M110 112C153 121 176 116 197 124C215 131 237 127 250 115" stroke-width="2.5"/>
+      <path d="M141 31C145 22 153 20 160 24C154 31 149 34 141 31ZM185 26C188 16 197 13 204 19C199 25 193 29 185 26ZM134 117C136 129 149 131 156 125C150 118 143 115 134 117ZM18 61C6 61 1 71 9 79C16 75 20 68 18 61Z" fill="url(#gold)" stroke="#ae7b2f" stroke-width="1"/>
+      <path d="M44 73L49 65L54 73L49 81Z" fill="#fff1b5" stroke="#8e6428" stroke-width="1.5"/>
+    </g>
+  </defs>
+  <path d="M56 39H464L486 73L464 107H56L34 73Z" stroke="#895b23" stroke-width="8"/>
+  <path d="M56 39H464L486 73L464 107H56L34 73Z" stroke="url(#gold)" stroke-width="5"/>
+  <path d="M60 46H460L477 73L460 100H60L43 73Z" stroke="#fff0bc" stroke-width="1.5"/>
+  <use href="#scrollwork"/>
+  <use href="#scrollwork" transform="translate(520 0) scale(-1 1)"/>
+  <path d="M239 24C234 12 247 8 253 17C257 5 266 5 270 17C278 8 289 16 280 25C292 31 282 42 271 36C267 47 252 44 250 35C239 41 230 32 239 24Z" fill="#e3f6f9" stroke="url(#gold)" stroke-width="2.5"/>
+  <path d="M260 13L272 25L260 37L248 25Z" fill="url(#gem)" stroke="#b58a39" stroke-width="2"/>
+  <path d="M260 15L255 25L260 35L265 25Z" fill="#f4feff" opacity=".65"/>
+  <path d="M250 119C239 107 243 100 250 102C256 103 260 112 260 112C260 112 264 103 270 102C277 100 281 107 270 119L260 128Z" fill="url(#gold)" stroke="#a16c25" stroke-width="1.5"/>
+  <path d="M69 49L72 55L78 58L72 61L69 67L66 61L60 58L66 55ZM451 79L454 85L460 88L454 91L451 97L448 91L442 88L448 85Z" fill="#fff7d5" opacity=".75"/>
+</svg>

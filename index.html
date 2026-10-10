@@ -2,16 +2,19 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="佐藤さん恋愛ゲーム">
     <title>あと100年で全員佐藤さんになる恋愛ゲーム</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23fff9f0'/%3E%3Cpath d='M12 38c8-17 32-17 40 0v16H12z' fill='%23d84f4f' stroke='%2325201f' stroke-width='4'/%3E%3Ccircle cx='32' cy='28' r='16' fill='%23fff5e7' stroke='%2325201f' stroke-width='4'/%3E%3Ccircle cx='26' cy='28' r='2.5' fill='%2325201f'/%3E%3Ccircle cx='38' cy='28' r='2.5' fill='%2325201f'/%3E%3Cpath d='M25 36c4 4 10 4 14 0' fill='none' stroke='%2325201f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="style.css?v=20261010-standing-art">
-    <link rel="stylesheet" href="title-screen.css?v=20261010-title-screen">
+    <link rel="stylesheet" href="title-screen.css?v=20261010-ornate-title">
   </head>
   <body class="title-active">
     <section class="title-screen" id="titleScreen" aria-label="タイトル画面">
       <img class="title-screen-art" src="title-screen.png?v=20261010" alt="あと100年で日本人は全員佐藤さんになるらしい" width="1240" height="1754" fetchpriority="high">
-      <button class="title-start" id="startButton" type="button">ゲームスタート</button>
+      <button class="title-start" id="startButton" type="button"><span class="title-start-label">ゲームスタート</span></button>
     </section>
     <main class="game-shell" id="gameShell" hidden>
       <section class="top-bar" aria-label="ゲーム情報">

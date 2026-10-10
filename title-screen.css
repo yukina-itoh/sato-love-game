@@ -1,9 +1,16 @@
+html:has(body.title-active) {
+  height: 100%;
+  overflow: hidden;
+  background: #afe8f8;
+}
+
 body.title-active {
   min-height: 0;
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
-  background: #f9fdfe;
+  overscroll-behavior: none;
+  background: #afe8f8;
 }
 
 .title-screen[hidden],
@@ -15,6 +22,9 @@ body.title-active {
   position: fixed;
   inset: 0;
   z-index: 10;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
   overflow: clip;
   background: #f9fdfe;
 }
@@ -37,16 +47,16 @@ body.title-active {
   position: absolute;
   left: 50%;
   bottom: max(8%, calc(env(safe-area-inset-bottom) + 16px));
-  width: min(320px, calc(100% - 56px));
-  min-height: 68px;
-  padding: 10px 24px;
-  border: 5px double #f9dda2;
-  border-radius: 8px;
-  outline: 1px solid #a97528;
-  outline-offset: 2px;
+  display: grid;
+  place-items: center;
+  width: min(380px, calc(100% - 20px));
+  aspect-ratio: 520 / 148;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
   color: #fff;
-  background: linear-gradient(#eb3b53, #b91834);
-  box-shadow: inset 0 0 0 1px #a81b31, 0 6px 18px rgba(100, 23, 42, 0.28);
+  background: transparent;
+  filter: drop-shadow(0 4px 5px rgba(100, 23, 42, 0.25));
   font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", serif;
   font-size: 24px;
   font-weight: 700;
@@ -62,28 +72,32 @@ body.title-active {
 .title-start::after {
   content: "";
   position: absolute;
-  top: calc(50% - 4px);
-  width: 8px;
-  height: 8px;
-  border: 1px solid #a97528;
-  background: #f9dda2;
-  transform: rotate(45deg);
+  pointer-events: none;
 }
 
 .title-start::before {
-  left: 9px;
+  inset: 26.35% 6.54% 27.7%;
+  clip-path: polygon(4.87% 0, 95.13% 0, 100% 50%, 95.13% 100%, 4.87% 100%, 0 50%);
+  background: linear-gradient(#ee4058, #bd1738);
 }
 
 .title-start::after {
-  right: 9px;
+  inset: 0;
+  background: url("start-button-frame.svg?v=20261010") center / 100% 100% no-repeat;
 }
 
-.title-start:hover {
-  background: linear-gradient(#f14b60, #cc1d3a);
+.title-start-label {
+  position: relative;
+  z-index: 1;
+  margin-top: -2px;
 }
 
-.title-start:active {
-  background: #b91834;
+.title-start:hover::before {
+  background: linear-gradient(#f25368, #d12040);
+}
+
+.title-start:active::before {
+  background: #bd1738;
 }
 
 .title-start:focus-visible {
@@ -91,10 +105,16 @@ body.title-active {
   outline-offset: 5px;
 }
 
+@media (max-width: 920px) {
+  body:not(.title-active):not(.route-active) .game-shell {
+    padding-top: max(10px, env(safe-area-inset-top));
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+  }
+}
+
 @media (max-height: 480px) {
   .title-start {
-    min-height: 54px;
-    padding: 6px 24px;
+    width: min(290px, calc(100% - 20px));
     font-size: 22px;
   }
 }
