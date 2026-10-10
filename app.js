@@ -222,7 +222,7 @@ function showEnding() {
 
   setDialogue({
     speaker: ending.label,
-    message: `${ending.title} (${note})\n\n${ending.text}\n\n${line}`,
+    message: `${ending.title} (${note})\n\n${line}`,
     scene: `${character.name} エンディング`,
     score: `正解 ${state.correct} / ${total}`
   });

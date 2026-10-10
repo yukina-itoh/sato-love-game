@@ -59,6 +59,8 @@ happy: [
 
 1つの文字列が1段落になります。行動なら `"私は走って逃げた。"` のように書き、カギ括弧は付けません。これまでの1つの文字列で書く形式も表示できます。
 
+リザルトには共通の `endings` の `label`・`title`・`note` と、各人物の `endingLines` を表示します。`note` が空なら実際の正解数を表示します。共通の説明文 `text` は表示しません。
+
 GitHub上で `game-data.js` を編集して `Commit changes` すると、GitHub Pagesの公開ページも自動で更新されます。
 
 ## Netlifyで公開
