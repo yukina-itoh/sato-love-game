@@ -214,7 +214,7 @@ function startRoute(id) {
   state.answered = false;
   els.stage.classList.remove("is-ending");
   els.stage.classList.remove("is-selecting");
-  if (document.body.classList.contains("royal-theme")) els.salonLabel.textContent = "private salon";
+  if (document.body.classList.contains("royal-theme")) els.salonLabel.textContent = "結婚相談所";
   setProfile(character);
   els.choices.className = "choices";
   setDialogue({
