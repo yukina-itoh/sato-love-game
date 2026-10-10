@@ -232,7 +232,11 @@ h1 {
 }
 
 .portrait.has-portrait-art {
+  --portrait-art-left: -56.5674%;
+  --portrait-art-top: 0%;
   place-items: center;
+  width: 100%;
+  aspect-ratio: 571 / 454;
 }
 
 .portrait.has-portrait-art::before,
@@ -253,16 +257,21 @@ h1 {
   display: none;
 }
 
-.portrait-sato.has-portrait-art {
-  width: 100%;
-  aspect-ratio: 571 / 454;
+.portrait-teshigawara.has-portrait-art {
+  --portrait-art-left: -58.6%;
+  --portrait-art-top: -6.6%;
 }
 
-/* Match the previous 571x454 bust frame at x=323 in the 1240px source. */
-.portrait-sato.has-portrait-art .portrait-art {
+.portrait-ado.has-portrait-art {
+  --portrait-art-left: -48%;
+  --portrait-art-top: 4.4%;
+}
+
+/* Frame the face and shoulders while retaining the full 1240px-wide image. */
+.portrait.has-portrait-art .portrait-art {
   position: absolute;
-  top: 0;
-  left: -56.5674%;
+  top: var(--portrait-art-top);
+  left: var(--portrait-art-left);
   width: 217.163%;
   height: auto;
 }

@@ -276,7 +276,11 @@ p {
 }
 
 .portrait.has-portrait-art {
+  --portrait-art-left: -56.5674%;
+  --portrait-art-top: 0%;
   place-items: center;
+  width: 100%;
+  aspect-ratio: 571 / 454;
 }
 
 .portrait.has-portrait-art::before,
@@ -297,16 +301,21 @@ p {
   display: none;
 }
 
-.portrait-sato.has-portrait-art {
-  width: 100%;
-  aspect-ratio: 571 / 454;
+.portrait-teshigawara.has-portrait-art {
+  --portrait-art-left: -58.6%;
+  --portrait-art-top: -6.6%;
 }
 
-/* Match the previous 571x454 bust frame at x=323 in the 1240px source. */
-.portrait-sato.has-portrait-art .portrait-art {
+.portrait-ado.has-portrait-art {
+  --portrait-art-left: -48%;
+  --portrait-art-top: 4.4%;
+}
+
+/* Frame the face and shoulders while retaining the full 1240px-wide image. */
+.portrait.has-portrait-art .portrait-art {
   position: absolute;
-  top: 0;
-  left: -56.5674%;
+  top: var(--portrait-art-top);
+  left: var(--portrait-art-left);
   width: 217.163%;
   height: auto;
 }
@@ -749,6 +758,7 @@ code {
   grid-template-rows: 1fr;
   min-height: 720px;
   padding: 24px 28px;
+  overflow: clip;
   background:
     linear-gradient(rgba(52, 31, 58, 0.1), rgba(79, 36, 62, 0.24)),
     radial-gradient(circle at 50% 26%, rgba(255, 255, 255, 0.9), transparent 16rem),
@@ -797,7 +807,7 @@ code {
   pointer-events: none;
 }
 
-.stage.is-route-active .character-card:has(.portrait-sato.has-portrait-art) {
+.stage.is-route-active .character-card:has(.has-portrait-art) {
   width: min(680px, 72vw);
 }
 
@@ -818,21 +828,12 @@ code {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-}
-
-.stage.is-route-active .portrait.has-portrait-art .portrait-art {
-  width: min(430px, 100%);
-  height: auto;
-  max-height: 520px;
-}
-
-.stage.is-route-active .portrait-sato.has-portrait-art {
   justify-self: center;
   width: min(660px, 100%);
   min-height: 0;
 }
 
-.stage.is-route-active .portrait-sato.has-portrait-art .portrait-art {
+.stage.is-route-active .portrait.has-portrait-art .portrait-art {
   flex: none;
   width: 217.163%;
   max-height: none;
@@ -1019,7 +1020,7 @@ code {
     gap: 0;
     min-height: 0;
     padding: 14px;
-    overflow: hidden;
+    overflow: clip;
   }
 
   .stage.is-route-active .background-sign {
@@ -1045,7 +1046,7 @@ code {
     transform: none;
   }
 
-  .stage.is-route-active .character-card:has(.portrait-sato.has-portrait-art) {
+  .stage.is-route-active .character-card:has(.has-portrait-art) {
     width: 100%;
     margin-top: 32px;
     margin-bottom: 0;
@@ -1055,20 +1056,12 @@ code {
     min-height: 200px;
   }
 
-  .stage.is-route-active .portrait-sato.has-portrait-art {
+  .stage.is-route-active .portrait.has-portrait-art {
     aspect-ratio: 571 / 430;
-  }
-
-  .stage.is-route-active .portrait.has-portrait-art .portrait-art {
-    width: min(260px, 86%);
-    max-height: 330px;
-  }
-
-  .stage.is-route-active .portrait-sato.has-portrait-art {
     width: min(480px, 135%, max(220px, calc((100svh - 340px) * 1.15)));
   }
 
-  .stage.is-route-active .portrait-sato.has-portrait-art .portrait-art {
+  .stage.is-route-active .portrait.has-portrait-art .portrait-art {
     width: 217.163%;
     max-height: none;
   }
@@ -1216,14 +1209,14 @@ code {
   }
 
   .stage.is-route-active .character-card,
-  .stage.is-route-active .character-card:has(.portrait-sato.has-portrait-art) {
+  .stage.is-route-active .character-card:has(.has-portrait-art) {
     grid-column: 1;
     grid-row: 1;
     width: 100%;
     margin-top: 56px;
   }
 
-  .stage.is-route-active .portrait-sato.has-portrait-art {
+  .stage.is-route-active .portrait.has-portrait-art {
     width: min(360px, 140%, calc((100svh - 170px) * 1.6));
   }
 
