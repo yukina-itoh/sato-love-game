@@ -1,5 +1,6 @@
 const state = {
   character: null,
+  previewCharacter: null,
   questionIndex: 0,
   correct: 0,
   answered: false
@@ -13,6 +14,7 @@ const els = {
   home: document.querySelector("#homeButton"),
   reset: document.querySelector("#resetButton"),
   stage: document.querySelector("#stage"),
+  salonLabel: document.querySelector(".background-sign span"),
   portrait: document.querySelector("#portrait"),
   profileLabel: document.querySelector("#profileLabel"),
   characterName: document.querySelector("#characterName"),
@@ -103,10 +105,14 @@ function showStart() {
   els.shell.hidden = false;
   document.body.classList.remove("title-active");
   state.character = null;
+  state.previewCharacter = null;
   state.questionIndex = 0;
   state.correct = 0;
   state.answered = false;
   els.stage.classList.remove("is-ending");
+  const illustrated = document.body.classList.contains("royal-theme");
+  els.stage.classList.toggle("is-selecting", illustrated);
+  els.salonLabel.textContent = illustrated ? "結婚相談所" : "private salon";
   els.title.textContent = GAME_DATA.title;
   setProfile(null);
   setDialogue({
@@ -116,24 +122,77 @@ function showStart() {
     score: `攻略対象 ${GAME_DATA.characters.length}人`
   });
 
+  if (illustrated) {
+    showCharacterSelection();
+    return;
+  }
+
   els.choices.className = "choices character-select";
   els.choices.replaceChildren(
     ...GAME_DATA.characters.map((character) => {
-      const illustrated = document.body.classList.contains("royal-theme");
       const label = `<span class="choice-title">${character.name}</span><span class="choice-meta">${character.tag}</span>`;
-      const choice = button(illustrated ? `<span class="choice-copy">${label}</span>` : label, () => startRoute(character.id));
-      if (illustrated && character.standingImage) {
-        const portrait = document.createElement("span");
-        portrait.className = `selection-portrait selection-${character.portrait}`;
-        const image = document.createElement("img");
-        image.src = character.standingImage;
-        image.alt = "";
-        portrait.append(image);
-        choice.append(portrait);
-      }
-      return choice;
+      return button(label, () => startRoute(character.id));
     })
   );
+}
+
+function showCharacterSelection() {
+  const order = ["teshigawara", "sato", "ado"];
+  const characters = order.map((id) => GAME_DATA.characters.find((item) => item.id === id)).filter(Boolean);
+  characters.push(...GAME_DATA.characters.filter((item) => !order.includes(item.id)));
+  const lineup = document.createElement("div");
+  lineup.className = "character-lineup";
+  lineup.setAttribute("role", "group");
+  lineup.setAttribute("aria-label", "相手の紹介");
+  lineup.style.setProperty("--figure-count", GAME_DATA.characters.length);
+
+  const detail = document.createElement("section");
+  detail.className = "selection-detail";
+  detail.id = "selectionDetail";
+  detail.setAttribute("aria-labelledby", "selectionName");
+  detail.setAttribute("aria-live", "polite");
+  const name = document.createElement("h2");
+  name.id = "selectionName";
+  const description = document.createElement("p");
+  description.id = "selectionDescription";
+  const confirm = button("この人で遊ぶ", () => startRoute(state.previewCharacter.id), "primary-button selection-confirm");
+  confirm.disabled = characters.length === 0;
+  detail.append(name, description, confirm);
+
+  const figures = characters.map((character, index) => {
+    const figure = button("", () => preview(character), `character-figure figure-${character.portrait}`);
+    figure.style.setProperty("--figure-index", index);
+    figure.setAttribute("aria-label", `${character.name}の紹介`);
+    figure.setAttribute("aria-controls", "selectionDetail");
+    figure.setAttribute("aria-pressed", "false");
+    if (character.standingImage) {
+      const image = document.createElement("img");
+      image.src = character.standingImage;
+      image.alt = "";
+      image.draggable = false;
+      figure.append(image);
+    } else {
+      figure.textContent = character.name;
+    }
+    lineup.append(figure);
+    return { character, figure };
+  });
+
+  function preview(character) {
+    state.previewCharacter = character;
+    name.textContent = character.name;
+    description.textContent = character.description || character.tag;
+    figures.forEach(({ character: item, figure }) => {
+      const selected = item.id === character.id;
+      figure.classList.toggle("is-selected", selected);
+      figure.setAttribute("aria-pressed", String(selected));
+    });
+  }
+
+  els.choices.className = "choices character-showcase";
+  els.choices.replaceChildren(lineup, detail);
+  if (figures.length) preview(GAME_DATA.characters[0]);
+  window.scrollTo(0, 0);
 }
 
 function showTitle() {
@@ -149,10 +208,13 @@ function startRoute(id) {
   if (!character) return;
 
   state.character = character;
+  state.previewCharacter = null;
   state.questionIndex = 0;
   state.correct = 0;
   state.answered = false;
   els.stage.classList.remove("is-ending");
+  els.stage.classList.remove("is-selecting");
+  els.salonLabel.textContent = "private salon";
   setProfile(character);
   els.choices.className = "choices";
   setDialogue({
@@ -236,7 +298,8 @@ function showEnding() {
 
 els.start.addEventListener("click", () => {
   showStart();
-  els.choices.querySelector("button")?.focus({ preventScroll: true });
+  els.choices.querySelector('[aria-pressed="true"]')?.focus({ preventScroll: true });
+  if (!state.previewCharacter) els.choices.querySelector("button")?.focus({ preventScroll: true });
 });
 els.reset.addEventListener("click", () => {
   showTitle();
