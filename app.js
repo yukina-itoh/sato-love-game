@@ -106,6 +106,7 @@ function showStart() {
   state.questionIndex = 0;
   state.correct = 0;
   state.answered = false;
+  els.stage.classList.remove("is-ending");
   els.title.textContent = GAME_DATA.title;
   setProfile(null);
   setDialogue({
@@ -117,12 +118,21 @@ function showStart() {
 
   els.choices.className = "choices character-select";
   els.choices.replaceChildren(
-    ...GAME_DATA.characters.map((character) =>
-      button(
-        `<span class="choice-title">${character.name}</span><span class="choice-meta">${character.tag}</span>`,
-        () => startRoute(character.id)
-      )
-    )
+    ...GAME_DATA.characters.map((character) => {
+      const illustrated = document.body.classList.contains("royal-theme");
+      const label = `<span class="choice-title">${character.name}</span><span class="choice-meta">${character.tag}</span>`;
+      const choice = button(illustrated ? `<span class="choice-copy">${label}</span>` : label, () => startRoute(character.id));
+      if (illustrated && character.standingImage) {
+        const portrait = document.createElement("span");
+        portrait.className = `selection-portrait selection-${character.portrait}`;
+        const image = document.createElement("img");
+        image.src = character.standingImage;
+        image.alt = "";
+        portrait.append(image);
+        choice.append(portrait);
+      }
+      return choice;
+    })
   );
 }
 
@@ -142,6 +152,7 @@ function startRoute(id) {
   state.questionIndex = 0;
   state.correct = 0;
   state.answered = false;
+  els.stage.classList.remove("is-ending");
   setProfile(character);
   els.choices.className = "choices";
   setDialogue({
@@ -207,6 +218,7 @@ function showEnding() {
   const lines = character.endingLines[key];
   const line = Array.isArray(lines) ? lines.join("\n\n") : lines;
   const note = ending.note || `${state.correct}問正解`;
+  els.stage.classList.add("is-ending");
 
   setDialogue({
     speaker: ending.label,

@@ -8,6 +8,10 @@ GitHub PagesやNetlifyでそのまま公開できる静的サイトです。
 2. このフォルダ内のファイルをすべてアップロードします。
    - `index.html`
    - `style.css`
+   - `otome.html`
+   - `otome-original.html`
+   - `otome-style.css`
+   - `royal-style.css`
    - `app.js`
    - `game-data.js`
    - `title-screen.css`
@@ -22,6 +26,17 @@ GitHub PagesやNetlifyでそのまま公開できる静的サイトです。
 ## 編集方法
 
 ゲーム内容を変えるときは、基本的に `game-data.js` だけ編集します。
+
+## デザインの比較・復元
+
+- 新デザイン: `otome.html`。`royal-style.css` に水色・白・赤・金の見た目をまとめています。
+- 元のデザイン: `otome-original.html`。元の `otome-style.css` は変更していません。
+
+どちらも同じ `game-data.js` を使うため、会話を編集すると両方に反映されます。新デザインの相手選択画像も、各人物の `standingImage` から表示します。
+
+公開ページを元の見た目に戻すには、`otome.html` の `royal-style.css` の読み込み行を削除し、`body` の `royal-theme` クラスを削除してコミットしてください。デザインを比較するだけなら、下記の元のデザインのURLを開けます。
+
+## タイトル画面・会話の編集
 
 タイトル画面の画像は `title-screen.png`、赤いスタートボタンの色・位置・大きさは `title-screen.css` で変更できます。画像は画面の高さに合わせて表示し、スマホでは左右だけを切ります。「ゲームスタート」で相手選択へ進み、ヘッダーのタイトルや「最初から」でタイトル画面に戻ります。
 
@@ -62,5 +77,6 @@ Netlifyでは乙女ゲーム版がトップページに表示されます。通�
 
 ## URL
 - Netlify（乙女ゲーム版）：https://gekidannoro-shidaisai2026.netlify.app/
+- 元の乙女デザイン：https://gekidannoro-shidaisai2026.netlify.app/otome-original.html
 - 初期版：https://yukina-itoh.github.io/sato-love-game/
 - 乙女ゲーム版：https://yukina-itoh.github.io/sato-love-game/otome.html
