@@ -302,10 +302,8 @@ els.start.addEventListener("click", () => {
   if (!state.previewCharacter) els.choices.querySelector("button")?.focus({ preventScroll: true });
 });
 els.reset.addEventListener("click", () => {
-  showStart();
-  els.choices.querySelector('[aria-pressed="true"]')?.focus({ preventScroll: true });
-  if (!state.previewCharacter) els.choices.querySelector("button")?.focus({ preventScroll: true });
-  window.scrollTo(0, 0);
+  showTitle();
+  els.start.focus({ preventScroll: true });
 });
 els.home.addEventListener("click", () => {
   showTitle();
