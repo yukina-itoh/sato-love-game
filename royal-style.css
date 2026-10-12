@@ -666,7 +666,9 @@ body.royal-theme {
 }
 
 .royal-theme .character-showcase {
-  --lineup-height: min(680px, max(340px, calc(100svh - 205px)));
+  --figure-art-height: min(680px, max(340px, calc(100svh - 205px)));
+  --figure-art-scale: 1.28;
+  --lineup-height: calc(var(--figure-art-height) * var(--figure-art-scale));
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -707,8 +709,8 @@ body.royal-theme {
   display: block;
   width: auto;
   max-width: none;
-  height: 100%;
-  transform: translateX(-50%) scale(1.28);
+  height: var(--figure-art-height);
+  transform: translateX(-50%) scale(var(--figure-art-scale));
   transform-origin: center top;
   pointer-events: none;
   user-select: none;
@@ -794,7 +796,7 @@ body.royal-theme {
 
 @media (min-width: 921px) {
   .royal-theme .character-showcase {
-    --lineup-height: min(680px, max(340px, calc(100svh - 260px)));
+    --figure-art-height: min(680px, max(340px, calc(100svh - 260px)));
   }
 }
 
@@ -808,7 +810,7 @@ body.royal-theme {
 }
 
 @media (max-height: 500px) and (orientation: landscape) {
-  .royal-theme .character-showcase { --lineup-height: 420px; }
+  .royal-theme .character-showcase { --figure-art-height: 420px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
