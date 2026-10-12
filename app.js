@@ -296,8 +296,9 @@ function showEnding() {
   );
 }
 
-els.start.addEventListener("click", () => {
+els.start.addEventListener("click", (event) => {
   showStart();
+  if (event.detail !== 0) return;
   els.choices.querySelector('[aria-pressed="true"]')?.focus({ preventScroll: true });
   if (!state.previewCharacter) els.choices.querySelector("button")?.focus({ preventScroll: true });
 });
