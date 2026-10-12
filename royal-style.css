@@ -708,7 +708,7 @@ body.royal-theme {
   width: auto;
   max-width: none;
   height: 100%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(1.06);
   pointer-events: none;
   user-select: none;
 }
