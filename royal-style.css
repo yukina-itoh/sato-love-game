@@ -717,7 +717,7 @@ body.royal-theme {
 }
 
 .royal-theme .figure-teshigawara {
-  --figure-art-center: 45%;
+  --figure-art-center: 75%;
 }
 
 .royal-theme .figure-sato {
@@ -725,7 +725,7 @@ body.royal-theme {
 }
 
 .royal-theme .figure-ado {
-  --figure-art-center: 65%;
+  --figure-art-center: 35%;
 }
 
 .royal-theme .character-figure:hover { opacity: 0.85; }
@@ -792,6 +792,12 @@ body.royal-theme {
   color: #fff;
   background: linear-gradient(#ef4b67, #c52245);
   transform: none;
+}
+
+@media (max-width: 920px) {
+  .royal-theme .character-showcase {
+    --figure-art-height: min(680px, max(340px, calc(100svh - 205px)), calc((100vw - 24px) * 1.45));
+  }
 }
 
 @media (min-width: 921px) {
