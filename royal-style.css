@@ -746,7 +746,7 @@ body.royal-theme {
   justify-self: center;
   z-index: 3;
   width: min(360px, calc(100% - 40px));
-  margin-top: calc(var(--lineup-height) * 0.54);
+  margin-top: calc(var(--lineup-height) * 0.42);
   padding: 20px 24px;
   border: 3px double #bd9a56;
   border-radius: 6px;
