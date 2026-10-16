@@ -679,8 +679,8 @@ body.royal-theme {
 .royal-theme .stage.is-selecting .selection-prompt {
   display: block;
   margin: 0;
-  color: #6b5b65;
-  font-size: 14px;
+  color: #9a7440;
+  font-size: 16px;
   line-height: 1.5;
   text-align: center;
 }
