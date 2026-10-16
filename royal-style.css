@@ -378,6 +378,10 @@ body.royal-theme {
   overflow-wrap: anywhere;
 }
 
+.royal-theme .stage.is-route-active:not(.is-ending):has(.portrait-sato, .portrait-teshigawara) .speaker {
+  width: 180px;
+}
+
 .royal-theme .stage.is-route-active .speaker::before,
 .royal-theme .stage.is-route-active .speaker::after {
   content: none;
