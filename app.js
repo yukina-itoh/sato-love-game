@@ -301,7 +301,8 @@ function showEnding() {
 
   setDialogue({
     speaker: ending.label,
-    message: `${ending.title} (${note})\n\n${line}`,
+    message: `\n${line}`,
+    feedback: { label: `${ending.title} (${note})`, tone: key === "bad" ? "down" : "up" },
     scene: `${character.name} エンディング`,
     score: `正解 ${state.correct} / ${total}`
   });
