@@ -255,6 +255,35 @@ body.royal-theme {
   padding: 0 12px 8px;
 }
 
+.royal-theme .life-meter {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 4;
+  display: flex;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.royal-theme .life-meter[hidden] {
+  display: none;
+}
+
+.royal-theme .life-heart {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 34px;
+  color: #c44570;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.royal-theme .life-heart.is-empty {
+  color: #a28f9b;
+}
+
 .royal-theme .stage.is-route-active .background-sign {
   display: none;
   position: absolute;

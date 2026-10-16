@@ -1,8 +1,11 @@
+const MAX_LIVES = 3;
+
 const state = {
   character: null,
   previewCharacter: null,
   questionIndex: 0,
   correct: 0,
+  lives: MAX_LIVES,
   answered: false
 };
 
@@ -14,6 +17,7 @@ const els = {
   home: document.querySelector("#homeButton"),
   reset: document.querySelector("#resetButton"),
   stage: document.querySelector("#stage"),
+  lifeMeter: document.querySelector("#lifeMeter"),
   salonLabel: document.querySelector(".background-sign span"),
   portrait: document.querySelector("#portrait"),
   profileLabel: document.querySelector("#profileLabel"),
@@ -95,6 +99,20 @@ function setProfile(character) {
   }
 }
 
+function updateLives() {
+  if (!els.lifeMeter) return;
+  els.lifeMeter.hidden = !state.character || els.stage.classList.contains("is-ending");
+  els.lifeMeter.setAttribute("aria-label", `残りライフ ${state.lives} / ${MAX_LIVES}`);
+  els.lifeMeter.replaceChildren(...Array.from({ length: MAX_LIVES }, (_, index) => {
+    const heart = document.createElement("span");
+    const filled = index < state.lives;
+    heart.className = `life-heart${filled ? "" : " is-empty"}`;
+    heart.textContent = filled ? "\u2665" : "\u2661";
+    heart.setAttribute("aria-hidden", "true");
+    return heart;
+  }));
+}
+
 function setDialogue({ speaker, message, scene, score, feedback }) {
   els.speaker.textContent = speaker;
   els.message.textContent = message;
@@ -110,6 +128,7 @@ function setDialogue({ speaker, message, scene, score, feedback }) {
   els.choices.scrollTop = 0;
   els.sceneLabel.textContent = scene;
   els.scoreLabel.textContent = score;
+  updateLives();
 }
 
 function showStart() {
@@ -120,6 +139,7 @@ function showStart() {
   state.previewCharacter = null;
   state.questionIndex = 0;
   state.correct = 0;
+  state.lives = MAX_LIVES;
   state.answered = false;
   els.stage.classList.remove("is-ending");
   const illustrated = document.body.classList.contains("royal-theme");
@@ -223,6 +243,7 @@ function startRoute(id) {
   state.previewCharacter = null;
   state.questionIndex = 0;
   state.correct = 0;
+  state.lives = MAX_LIVES;
   state.answered = false;
   els.stage.classList.remove("is-ending");
   els.stage.classList.remove("is-selecting");
@@ -262,6 +283,8 @@ function chooseAnswer(choice) {
 
   if (choice.correct) {
     state.correct += 1;
+  } else {
+    state.lives = Math.max(0, state.lives - 1);
   }
 
   const isDown = !choice.correct && choice.mood !== 0;

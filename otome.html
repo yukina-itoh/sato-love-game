@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-title" content="佐藤さん恋愛ゲーム">
     <title>あと100年で全員佐藤さんになる恋愛ゲーム 乙女デザイン案</title>
     <link rel="stylesheet" href="otome-style.css?v=20261010-standing-art">
-  <link rel="stylesheet" href="royal-style.css?v=20261016-hide-route-sign">
+  <link rel="stylesheet" href="royal-style.css?v=20261016-life-hearts">
     <link rel="stylesheet" href="title-screen.css?v=20261010-ornate-title">
   </head>
   <body class="royal-theme title-active">
@@ -41,6 +41,7 @@
           <strong>Marry Go Round</strong>
         </div>
         <p class="selection-prompt">キャラクターを選択してください</p>
+        <div class="life-meter" id="lifeMeter" role="img" aria-label="残りライフ 3 / 3" hidden></div>
 
         <aside class="character-card" id="characterCard">
           <div class="portrait portrait-default" id="portrait" aria-hidden="true">
@@ -74,6 +75,6 @@
     </main>
 
     <script src="game-data.js?v=20261016-sato-reaction"></script>
-    <script src="app.js?v=20261016-ending-label"></script>
+    <script src="app.js?v=20261016-life-hearts"></script>
   </body>
 </html>
