@@ -379,7 +379,7 @@ body.royal-theme {
 }
 
 .royal-theme .stage.is-route-active:not(.is-ending):has(.portrait-sato, .portrait-teshigawara) .speaker {
-  width: 180px;
+  width: 126px;
 }
 
 .royal-theme .stage.is-route-active .speaker::before,
