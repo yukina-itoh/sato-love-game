@@ -104,10 +104,14 @@ function updateLives() {
   els.lifeMeter.hidden = !state.character || els.stage.classList.contains("is-ending");
   els.lifeMeter.setAttribute("aria-label", `残りライフ ${state.lives} / ${MAX_LIVES}`);
   els.lifeMeter.replaceChildren(...Array.from({ length: MAX_LIVES }, (_, index) => {
-    const heart = document.createElement("span");
+    const heart = document.createElement("img");
     const filled = index < state.lives;
     heart.className = `life-heart${filled ? "" : " is-empty"}`;
-    heart.textContent = filled ? "\u2665" : "\u2661";
+    heart.src = filled ? "life-heart-full.jpg?v=20261016" : "life-heart-empty.jpg?v=20261016";
+    heart.alt = "";
+    heart.draggable = false;
+    heart.width = 30;
+    heart.height = 34;
     heart.setAttribute("aria-hidden", "true");
     return heart;
   }));

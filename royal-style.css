@@ -265,6 +265,7 @@ body.royal-theme {
   z-index: 4;
   display: flex;
   gap: 4px;
+  mix-blend-mode: multiply;
   pointer-events: none;
 }
 
@@ -273,18 +274,12 @@ body.royal-theme {
 }
 
 .royal-theme .life-heart {
-  display: grid;
-  place-items: center;
+  display: block;
+  flex: 0 0 30px;
   width: 30px;
   height: 34px;
-  color: var(--dialogue-pink);
-  font-family: Arial, sans-serif;
-  font-size: 30px;
-  line-height: 1;
-}
-
-.royal-theme .life-heart.is-empty {
-  color: hsl(var(--dialogue-pink-hue) 12% 65%);
+  object-fit: contain;
+  user-select: none;
 }
 
 .royal-theme .stage.is-route-active .background-sign {
