@@ -48,6 +48,23 @@ function button(label, onClick, className = "choice-button") {
   return el;
 }
 
+function setStandingImage(src) {
+  let art = els.portrait.querySelector(".portrait-art");
+  if (!art) {
+    art = document.createElement("img");
+    art.className = "portrait-art";
+    art.alt = "";
+    els.portrait.append(art);
+  }
+  if (src) {
+    art.src = src;
+    art.hidden = false;
+  } else {
+    art.removeAttribute("src");
+    art.hidden = true;
+  }
+}
+
 function setProfile(character) {
   const active = Boolean(character);
   const display = character || {
@@ -62,20 +79,7 @@ function setProfile(character) {
   document.body.classList.toggle("route-active", active);
   els.stage.classList.toggle("is-route-active", active);
   els.portrait.className = `portrait portrait-${display.portrait}${display.standingImage ? " has-portrait-art" : ""}`;
-  let art = els.portrait.querySelector(".portrait-art");
-  if (!art) {
-    art = document.createElement("img");
-    art.className = "portrait-art";
-    art.alt = "";
-    els.portrait.append(art);
-  }
-  if (display.standingImage) {
-    art.src = display.standingImage;
-    art.hidden = false;
-  } else {
-    art.removeAttribute("src");
-    art.hidden = true;
-  }
+  setStandingImage(display.standingImage);
   els.profileLabel.textContent = active ? "攻略対象" : "相談所";
   els.characterName.textContent = active ? display.fullName : "Marry Go Round";
   els.characterTag.textContent = display.tag;
@@ -230,6 +234,7 @@ function showQuestion() {
   const { character, questionIndex, correct } = state;
   const question = character.questions[questionIndex];
   state.answered = false;
+  setStandingImage(character.standingImage);
 
   setDialogue({
     speaker: character.name,
@@ -251,7 +256,9 @@ function chooseAnswer(choice) {
     state.correct += 1;
   }
 
-  const prefix = choice.correct ? "好感度アップ" : choice.mood === 0 ? "反応は普通" : "好感度ダウン";
+  const isDown = !choice.correct && choice.mood !== 0;
+  const prefix = choice.correct ? "好感度アップ" : isDown ? "好感度ダウン" : "反応は普通";
+  setStandingImage(isDown && state.character.downStandingImage || state.character.standingImage);
   setDialogue({
     speaker: state.character.name,
     message: `${prefix}\n${choice.reaction}`,
@@ -281,6 +288,7 @@ function showEnding() {
   const line = Array.isArray(lines) ? lines.join("\n\n") : lines;
   const note = ending.note || `${state.correct}問正解`;
   els.stage.classList.add("is-ending");
+  setStandingImage(character.standingImage);
 
   setDialogue({
     speaker: ending.label,

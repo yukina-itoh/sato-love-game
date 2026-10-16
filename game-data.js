@@ -34,6 +34,7 @@ window.GAME_DATA = {
       tag: "婚活しに来た人。まさに普通",
       portrait: "sato",
       standingImage: "sato-standing.png?v=20261016-finished-art",
+      downStandingImage: "sato-standing-down.png?v=20261016",
       color: "#d84f4f",
       stats: ["佐藤濃度 92%", "ラーメン耐性 高", "Netflix 未加入"],
       opening: "はじめまして。僕は佐藤太郎です。",
