@@ -380,20 +380,8 @@ body.royal-theme {
 
 .royal-theme .stage.is-route-active .speaker::before,
 .royal-theme .stage.is-route-active .speaker::after {
-  content: "";
-  position: absolute;
-  top: calc(50% - 2.5px);
-  width: 5px;
-  height: 5px;
-  border: 1px solid hsl(var(--dialogue-pink-hue) 80% 98%);
-  border-radius: 50%;
-  background: var(--dialogue-pink);
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7);
-  pointer-events: none;
+  content: none;
 }
-
-.royal-theme .stage.is-route-active .speaker::before { left: 4px; }
-.royal-theme .stage.is-route-active .speaker::after { right: 4px; }
 
 .royal-theme .stage.is-route-active .message {
   padding-top: 0;
