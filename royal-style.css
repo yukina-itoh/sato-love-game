@@ -249,6 +249,8 @@ body.royal-theme {
 }
 
 .royal-theme .stage.is-route-active {
+  --dialogue-pink: #f97787;
+  --dialogue-pink-dark: #ac3548;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: minmax(min-content, 1fr) auto;
   gap: 0;
@@ -274,14 +276,14 @@ body.royal-theme {
   place-items: center;
   width: 30px;
   height: 34px;
-  color: #c44570;
+  color: var(--dialogue-pink);
   font-family: Arial, sans-serif;
   font-size: 30px;
   line-height: 1;
 }
 
 .royal-theme .life-heart.is-empty {
-  color: #a28f9b;
+  color: #b49b9f;
 }
 
 .royal-theme .stage.is-route-active .background-sign {
@@ -346,12 +348,12 @@ body.royal-theme {
 .royal-theme .stage.is-route-active .message-box {
   min-height: 132px;
   padding: 34px 28px 22px;
-  border: solid #f29bd4;
+  border: solid var(--dialogue-pink);
   border-width: 1px 3px 4px 1px;
   border-radius: 18px;
-  color: #3d2934;
+  color: #3d292d;
   background: rgba(255, 255, 255, 0.76);
-  box-shadow: 0 5px 16px rgba(160, 72, 115, 0.1);
+  box-shadow: 0 5px 16px rgba(249, 119, 135, 0.14);
 }
 
 .royal-theme .stage.is-route-active .message-box::before,
@@ -365,10 +367,10 @@ body.royal-theme {
   min-width: 116px;
   max-width: calc(100% - 12px);
   padding: 2px 22px;
-  border: 1px solid #ec65bf;
+  border: 1px solid var(--dialogue-pink);
   border-radius: 999px;
-  color: #61324f;
-  background: linear-gradient(#ffbde8, #ffa4dd);
+  color: #672d35;
+  background: linear-gradient(#ffc1c8, var(--dialogue-pink));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.82);
   font-family: var(--serif);
   font-size: 16px;
@@ -384,9 +386,9 @@ body.royal-theme {
   top: calc(50% - 3px);
   width: 6px;
   height: 6px;
-  border: 1px solid #fff4fc;
+  border: 1px solid #fff5f6;
   border-radius: 50%;
-  background: #f88cd0;
+  background: var(--dialogue-pink);
   box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.7);
   pointer-events: none;
 }
@@ -408,7 +410,7 @@ body.royal-theme {
 }
 
 .royal-theme .message .reaction-status-up {
-  color: #b3436e;
+  color: var(--dialogue-pink-dark);
   font-weight: 700;
 }
 
@@ -468,8 +470,8 @@ body.royal-theme {
 
 .royal-theme .stage.is-route-active .choice-button:hover {
   color: var(--ink);
-  border-color: #b51d40;
-  background: #fff0f4;
+  border-color: var(--dialogue-pink);
+  background: #fff1f3;
 }
 
 .royal-theme .stage.is-route-active .primary-button:hover {
