@@ -95,9 +95,17 @@ function setProfile(character) {
   }
 }
 
-function setDialogue({ speaker, message, scene, score }) {
+function setDialogue({ speaker, message, scene, score, feedback }) {
   els.speaker.textContent = speaker;
   els.message.textContent = message;
+  if (feedback) {
+    const status = document.createElement("span");
+    status.className = `reaction-status reaction-status-${feedback.tone}`;
+    status.textContent = `［${feedback.label}］\n`;
+    const line = document.createElement("span");
+    line.textContent = message;
+    els.message.replaceChildren(status, line);
+  }
   els.message.scrollTop = 0;
   els.choices.scrollTop = 0;
   els.sceneLabel.textContent = scene;
@@ -261,7 +269,8 @@ function chooseAnswer(choice) {
   setStandingImage(isDown && state.character.downStandingImage || state.character.standingImage);
   setDialogue({
     speaker: state.character.name,
-    message: `${prefix}\n${choice.reaction}`,
+    message: choice.reaction,
+    feedback: { label: prefix, tone: choice.correct ? "up" : isDown ? "down" : "neutral" },
     scene: `${state.character.name} ルート`,
     score: `正解 ${state.correct} / ${state.character.questions.length}`
   });

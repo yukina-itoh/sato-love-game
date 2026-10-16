@@ -371,6 +371,20 @@ body.royal-theme {
   text-shadow: none;
 }
 
+.royal-theme .message .reaction-status {
+  color: #626d78;
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.royal-theme .message .reaction-status-up {
+  color: #b3436e;
+}
+
+.royal-theme .message .reaction-status-down {
+  color: #52667a;
+}
+
 .royal-theme .stage.is-route-active .choices {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-rows: auto;
