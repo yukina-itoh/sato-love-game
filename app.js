@@ -101,13 +101,13 @@ function setProfile(character) {
 
 function updateLives() {
   if (!els.lifeMeter) return;
-  els.lifeMeter.hidden = !state.character || els.stage.classList.contains("is-ending");
+  els.lifeMeter.hidden = !state.character;
   els.lifeMeter.setAttribute("aria-label", `残りライフ ${state.lives} / ${MAX_LIVES}`);
   els.lifeMeter.replaceChildren(...Array.from({ length: MAX_LIVES }, (_, index) => {
     const heart = document.createElement("img");
     const filled = index < state.lives;
     heart.className = `life-heart${filled ? "" : " is-empty"}`;
-    heart.src = filled ? "life-heart-full.jpg?v=20261016" : "life-heart-empty.jpg?v=20261016";
+    heart.src = filled ? "life-heart-full.jpg?v=20261016-v2" : "life-heart-empty.jpg?v=20261016-v2";
     heart.alt = "";
     heart.draggable = false;
     heart.width = 30;
