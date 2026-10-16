@@ -81,7 +81,7 @@ window.GAME_DATA = {
             },
             {
               text: "料理ハマってます。",
-              reaction: "いいですね！ 僕も柔軟剤の組み合わせとか考えてます！",
+              reaction: "いいですね！ 僕は料理苦手なので尊敬します！",
               mood: 1,
               correct: true
             }
