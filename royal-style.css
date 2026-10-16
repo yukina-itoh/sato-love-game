@@ -256,6 +256,7 @@ body.royal-theme {
 }
 
 .royal-theme .stage.is-route-active .background-sign {
+  display: none;
   position: absolute;
   top: 0;
   left: 50%;
