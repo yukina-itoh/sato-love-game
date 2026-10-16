@@ -373,16 +373,18 @@ body.royal-theme {
 
 .royal-theme .message .reaction-status {
   color: #626d78;
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: 400;
 }
 
 .royal-theme .message .reaction-status-up {
   color: #b3436e;
+  font-weight: 700;
 }
 
 .royal-theme .message .reaction-status-down {
   color: #52667a;
+  font-weight: 700;
 }
 
 .royal-theme .stage.is-route-active .choices {
