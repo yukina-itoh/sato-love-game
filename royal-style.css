@@ -672,6 +672,19 @@ body.royal-theme {
   padding-bottom: 0;
 }
 
+.royal-theme .selection-prompt {
+  display: none;
+}
+
+.royal-theme .stage.is-selecting .selection-prompt {
+  display: block;
+  margin: 0;
+  color: #6b5b65;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
 .royal-theme .stage.is-selecting .message-box {
   display: none;
 }
