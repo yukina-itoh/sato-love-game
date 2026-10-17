@@ -28,7 +28,7 @@ html:has(body.royal-theme.route-active) {
 }
 
 .royal-theme .brand-logo {
-  width: 116px;
+  width: 232px;
   filter: none;
 }
 
@@ -488,13 +488,13 @@ html:has(body.royal-theme.route-active) {
 
   .royal-theme .brand-lockup,
   .royal-theme.route-active .brand-lockup {
-    grid-template-columns: 64px minmax(0, 1fr);
+    grid-template-columns: 128px minmax(0, 1fr);
     gap: 3px 8px;
   }
 
   .royal-theme .brand-logo,
   .royal-theme.route-active .brand-logo {
-    width: 64px;
+    width: 128px;
   }
 
   .royal-theme .brand-title,
@@ -612,13 +612,13 @@ html:has(body.royal-theme.route-active) {
 @media (max-width: 360px) {
   .royal-theme .brand-lockup,
   .royal-theme.route-active .brand-lockup {
-    grid-template-columns: 52px minmax(0, 1fr);
+    grid-template-columns: 104px minmax(0, 1fr);
     gap: 3px 6px;
   }
 
   .royal-theme .brand-logo,
   .royal-theme.route-active .brand-logo {
-    width: 52px;
+    width: 104px;
   }
 
   .royal-theme .brand-title,
