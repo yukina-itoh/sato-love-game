@@ -359,7 +359,7 @@ html:has(body.royal-theme.route-active) {
   border-width: 1px 3px 4px 1px;
   border-radius: 18px;
   color: #3d292d;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 5px 16px hsl(var(--dialogue-pink-hue) 80% 78% / 0.14);
 }
 
