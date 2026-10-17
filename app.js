@@ -198,7 +198,7 @@ function showCharacterSelection() {
   const figures = characters.map((character, index) => {
     const figure = button("", () => preview(character), `character-figure figure-${character.portrait}`);
     figure.style.setProperty("--figure-index", index);
-    figure.setAttribute("aria-label", `${character.name}の紹介`);
+    figure.setAttribute("aria-label", `${character.fullName || character.name}の紹介`);
     figure.setAttribute("aria-controls", "selectionDetail");
     figure.setAttribute("aria-pressed", "false");
     if (character.standingImage) {
@@ -216,7 +216,7 @@ function showCharacterSelection() {
 
   function preview(character) {
     state.previewCharacter = character;
-    name.textContent = character.name;
+    name.textContent = character.fullName || character.name;
     description.textContent = character.description || character.tag;
     figures.forEach(({ character: item, figure }) => {
       const selected = item.id === character.id;
