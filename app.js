@@ -123,7 +123,8 @@ function setDialogue({ speaker, message, scene, score, feedback }) {
   if (feedback) {
     const status = document.createElement("span");
     status.className = `reaction-status reaction-status-${feedback.tone}`;
-    status.textContent = `［${feedback.label}］\n`;
+    const brackets = feedback.brackets || "［］";
+    status.textContent = `${brackets[0]}${feedback.label}${brackets[1]}\n`;
     const line = document.createElement("span");
     line.textContent = message;
     els.message.replaceChildren(status, line);
@@ -297,7 +298,11 @@ function chooseAnswer(choice) {
   setDialogue({
     speaker: state.character.name,
     message: choice.reaction,
-    feedback: { label: prefix, tone: choice.correct ? "up" : isDown ? "down" : "neutral" },
+    feedback: {
+      label: prefix,
+      tone: choice.correct ? "up" : isDown ? "down" : "neutral",
+      brackets: choice.correct || isDown ? "【】" : "［］"
+    },
     scene: `${state.character.name} ルート`,
     score: `正解 ${state.correct} / ${state.character.questions.length}`
   });
