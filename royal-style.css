@@ -264,8 +264,9 @@ html:has(body.royal-theme.route-active) {
 
 .royal-theme .life-meter {
   position: absolute;
-  top: 6px;
-  right: 12px;
+  /* Anchor below the header; the heart artwork also has white image margins. */
+  top: calc(100% + 3px);
+  right: 6px;
   z-index: 4;
   display: flex;
   gap: 4px;
@@ -562,6 +563,10 @@ html:has(body.royal-theme.route-active) {
 
   .royal-theme .stage.is-route-active {
     padding: 0 0 6px;
+  }
+
+  .royal-theme .life-meter {
+    right: -6px;
   }
 
   .royal-theme .stage.is-route-active .background-sign strong {
