@@ -6,6 +6,7 @@ const state = {
   questionIndex: 0,
   correct: 0,
   lives: MAX_LIVES,
+  pendingLifeLoss: false,
   answered: false
 };
 
@@ -102,12 +103,16 @@ function setProfile(character) {
 function updateLives() {
   if (!els.lifeMeter) return;
   els.lifeMeter.hidden = !state.character;
-  els.lifeMeter.setAttribute("aria-label", `残りライフ ${state.lives} / ${MAX_LIVES}`);
+  const pendingNote = state.pendingLifeLoss ? "（1つ減少予定）" : "";
+  els.lifeMeter.setAttribute("aria-label", `残りライフ ${state.lives} / ${MAX_LIVES}${pendingNote}`);
   els.lifeMeter.replaceChildren(...Array.from({ length: MAX_LIVES }, (_, index) => {
     const heart = document.createElement("img");
     const filled = index < state.lives;
-    heart.className = `life-heart${filled ? "" : " is-empty"}`;
-    heart.src = filled ? "life-heart-full.jpg?v=20261016-v2" : "life-heart-empty.jpg?v=20261016-v2";
+    const broken = state.pendingLifeLoss && index === state.lives - 1;
+    heart.className = `life-heart${broken ? " is-broken" : filled ? "" : " is-empty"}`;
+    heart.src = broken
+      ? "life-heart-broken.jpg?v=20261017"
+      : filled ? "life-heart-full.jpg?v=20261016-v2" : "life-heart-empty.jpg?v=20261016-v2";
     heart.alt = "";
     heart.draggable = false;
     heart.width = 30;
@@ -145,6 +150,7 @@ function showStart() {
   state.questionIndex = 0;
   state.correct = 0;
   state.lives = MAX_LIVES;
+  state.pendingLifeLoss = false;
   state.answered = false;
   els.stage.classList.remove("is-ending");
   const illustrated = document.body.classList.contains("royal-theme");
@@ -249,6 +255,7 @@ function startRoute(id) {
   state.questionIndex = 0;
   state.correct = 0;
   state.lives = MAX_LIVES;
+  state.pendingLifeLoss = false;
   state.answered = false;
   els.stage.classList.remove("is-ending");
   els.stage.classList.remove("is-selecting");
@@ -285,11 +292,10 @@ function showQuestion() {
 function chooseAnswer(choice) {
   if (state.answered) return;
   state.answered = true;
+  state.pendingLifeLoss = !choice.correct && state.lives > 0;
 
   if (choice.correct) {
     state.correct += 1;
-  } else {
-    state.lives = Math.max(0, state.lives - 1);
   }
 
   const isDown = !choice.correct && choice.mood !== 0;
@@ -310,6 +316,12 @@ function chooseAnswer(choice) {
   const isLast = state.questionIndex >= state.character.questions.length - 1;
   els.choices.replaceChildren(
     button(isLast ? "結果を見る" : "次の会話へ", () => {
+      if (!state.answered) return;
+      state.answered = false;
+      if (state.pendingLifeLoss) {
+        state.lives = Math.max(0, state.lives - 1);
+        state.pendingLifeLoss = false;
+      }
       if (isLast) {
         showEnding();
       } else {
