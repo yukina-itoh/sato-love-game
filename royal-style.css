@@ -279,9 +279,9 @@ html:has(body.royal-theme.route-active) {
 
 .royal-theme .life-heart {
   display: block;
-  flex: 0 0 30px;
-  width: 30px;
-  height: 34px;
+  flex: 0 0 37.5px;
+  width: 37.5px;
+  height: 42.5px;
   object-fit: contain;
   user-select: none;
 }
