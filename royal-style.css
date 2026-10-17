@@ -435,39 +435,20 @@ body.royal-theme {
 
 .royal-theme .stage.is-route-active .primary-button {
   width: min(320px, 100%);
-  border-color: #edcf89;
-  color: #fff;
-  background: linear-gradient(#e23955, #b31c3b);
-  font-family: var(--serif);
-  font-size: 19px;
-  text-shadow: 0 1px 2px rgba(104, 25, 43, 0.3);
+  border-color: var(--dialogue-pink);
+  background: hsl(var(--dialogue-pink-hue) 80% 97%);
+  text-shadow: none;
 }
 
 .royal-theme .stage.is-route-active .primary-button::before,
 .royal-theme .stage.is-route-active .primary-button::after {
-  content: "";
-  position: absolute;
-  top: calc(50% - 3px);
-  width: 6px;
-  height: 6px;
-  border: 1px solid #fff5d8;
-  background: #d6b16c;
-  transform: rotate(45deg);
-  pointer-events: none;
+  content: none;
 }
-
-.royal-theme .stage.is-route-active .primary-button::before { left: 10px; }
-.royal-theme .stage.is-route-active .primary-button::after { right: 10px; }
 
 .royal-theme .stage.is-route-active .choice-button:hover {
   color: var(--ink);
-  border-color: var(--dialogue-pink);
-  background: hsl(var(--dialogue-pink-hue) 80% 97%);
-}
-
-.royal-theme .stage.is-route-active .primary-button:hover {
-  color: #fff;
-  background: linear-gradient(#ef4b67, #c52245);
+  border-color: #c6a251;
+  background: #fff;
 }
 
 .royal-theme button:focus-visible,
@@ -614,7 +595,6 @@ body.royal-theme {
 
   .royal-theme .stage.is-route-active .primary-button {
     width: min(300px, 90%);
-    font-size: 18px;
   }
 
   .royal-theme .stage.is-ending .portrait.has-portrait-art {
