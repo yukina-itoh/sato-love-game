@@ -492,6 +492,18 @@ html:has(body.royal-theme.route-active) {
     gap: 3px 8px;
   }
 
+  .royal-theme .brand-copy {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2;
+    grid-row: 1;
+    gap: 3px;
+  }
+
+  .royal-theme .brand-logo-link {
+    grid-row: 1;
+  }
+
   .royal-theme .brand-logo,
   .royal-theme.route-active .brand-logo {
     width: 128px;
