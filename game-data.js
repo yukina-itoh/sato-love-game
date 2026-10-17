@@ -30,7 +30,7 @@ window.GAME_DATA = {
     {
       id: "sato",
       name: "佐藤",
-      fullName: "佐藤太郎",
+      fullName: "佐藤 太郎",
       tag: "婚活しに来た人。まさに普通",
       portrait: "sato",
       standingImage: "sato-standing.png?v=20261016-finished-art",
@@ -107,7 +107,7 @@ window.GAME_DATA = {
     {
       id: "teshigawara",
       name: "勅使河原",
-      fullName: "勅使河原俊紀",
+      fullName: "勅使河原 俊紀",
       tag: "婚活しに来た人。冒険家",
       portrait: "teshigawara",
       standingImage: "teshigawara-standing.png?v=20261010",
