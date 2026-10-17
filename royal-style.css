@@ -12,6 +12,10 @@ body.royal-theme {
   letter-spacing: 0;
 }
 
+html:has(body.royal-theme.route-active) {
+  scrollbar-gutter: stable;
+}
+
 .royal-theme .game-shell {
   width: min(1040px, calc(100% - 40px));
   padding: 16px 0 24px;
