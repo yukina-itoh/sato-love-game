@@ -29,6 +29,10 @@ html:has(body.royal-theme.route-active) {
 
 .royal-theme .brand-logo {
   width: 232px;
+  /* Trim transparent vertical margins without shrinking the logo artwork. */
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  object-position: center 56%;
   filter: none;
 }
 
