@@ -188,7 +188,7 @@ window.GAME_DATA = {
       fullName: "某有名アーティストA",
       tag: "承認欲求と普通のあいだで揺れる人",
       portrait: "ado",
-      standingImage: "ado-standing.png?v=20261010",
+      standingImage: "ado-standing.png?v=20261019-finished-art",
       upStandingImage: "ado-standing-up.png?v=20261019-finished-art",
       downStandingImage: "ado-standing-down.png?v=20261019-finished-art",
       color: "#5a63d8",
