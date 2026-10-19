@@ -18,7 +18,9 @@ body.royal-theme:not(.title-active)::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: url("salon-background.png?v=20261019") center / cover no-repeat;
+  background:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.88) 220px, transparent 340px),
+    url("salon-background.png?v=20261019") center / cover no-repeat;
   pointer-events: none;
 }
 
