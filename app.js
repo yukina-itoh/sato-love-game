@@ -300,7 +300,8 @@ function chooseAnswer(choice) {
 
   const isDown = !choice.correct && choice.mood !== 0;
   const prefix = choice.correct ? "好感度アップ" : isDown ? "好感度ダウン" : "反応は普通";
-  setStandingImage(isDown && state.character.downStandingImage || state.character.standingImage);
+  const reactionImage = choice.correct ? state.character.upStandingImage : isDown ? state.character.downStandingImage : null;
+  setStandingImage(reactionImage || state.character.standingImage);
   setDialogue({
     speaker: state.character.name,
     message: choice.reaction,
