@@ -35,7 +35,7 @@ window.GAME_DATA = {
       portrait: "sato",
       standingImage: "sato-standing.png?v=20261016-finished-art",
       upStandingImage: "sato-standing-up.png?v=20261019-finished-art",
-      downStandingImage: "sato-standing-down.png?v=20261016",
+      downStandingImage: "sato-standing-down.png?v=20261019-finished-art",
       color: "#d84f4f",
       stats: ["佐藤濃度 92%", "ラーメン耐性 高", "Netflix 未加入"],
       opening: "はじめまして。僕は佐藤太郎です。",
