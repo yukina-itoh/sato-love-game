@@ -763,10 +763,9 @@ html:has(body.royal-theme.route-active) {
   border-radius: 0;
   color: var(--ink);
   background: transparent;
-  opacity: 0.55;
+  opacity: 1;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: opacity 180ms ease;
 }
 
 .royal-theme .character-figure img {
@@ -781,6 +780,8 @@ html:has(body.royal-theme.route-active) {
   transform-origin: center top;
   pointer-events: none;
   user-select: none;
+  filter: brightness(0.78) saturate(0.65);
+  transition: filter 180ms ease;
 }
 
 .royal-theme .figure-teshigawara {
@@ -795,11 +796,17 @@ html:has(body.royal-theme.route-active) {
   --figure-art-center: 35%;
 }
 
-.royal-theme .character-figure:hover { opacity: 0.85; }
+.royal-theme .character-figure:hover img {
+  filter: brightness(0.9) saturate(0.85);
+}
 
 .royal-theme .character-figure.is-selected {
   z-index: 2;
   opacity: 1;
+}
+
+.royal-theme .character-figure.is-selected img {
+  filter: none;
 }
 
 .royal-theme .character-figure:focus-visible {
@@ -887,5 +894,5 @@ html:has(body.royal-theme.route-active) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .royal-theme .character-figure { transition: none; }
+  .royal-theme .character-figure img { transition: none; }
 }
