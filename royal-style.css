@@ -7,9 +7,19 @@ body.royal-theme {
   --ruby: #c92143;
   --ruby-dark: #9f1734;
   --serif: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", serif;
-  background: linear-gradient(#fff 0%, #effbff 42%, #bcecf9 100%);
-  background-attachment: fixed;
+  background: #c3b4ae;
+  isolation: isolate;
   letter-spacing: 0;
+}
+
+/* Keep the artwork viewport-sized when dialogue makes the page taller. */
+body.royal-theme:not(.title-active)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("salon-background.png?v=20261019") center / cover no-repeat;
+  pointer-events: none;
 }
 
 html:has(body.royal-theme.route-active) {
