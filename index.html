@@ -6,39 +6,44 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="佐藤さん恋愛ゲーム">
-    <title>あと100年で全員佐藤さんになる恋愛ゲーム</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23fff9f0'/%3E%3Cpath d='M12 38c8-17 32-17 40 0v16H12z' fill='%23d84f4f' stroke='%2325201f' stroke-width='4'/%3E%3Ccircle cx='32' cy='28' r='16' fill='%23fff5e7' stroke='%2325201f' stroke-width='4'/%3E%3Ccircle cx='26' cy='28' r='2.5' fill='%2325201f'/%3E%3Ccircle cx='38' cy='28' r='2.5' fill='%2325201f'/%3E%3Cpath d='M25 36c4 4 10 4 14 0' fill='none' stroke='%2325201f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="style.css?v=20261010-standing-art">
+    <title>あと100年で全員佐藤さんになる恋愛ゲーム 乙女デザイン案</title>
+    <link rel="stylesheet" href="otome-style.css?v=20261010-standing-art">
+  <link rel="stylesheet" href="royal-style.css?v=20261020-raised-results">
     <link rel="stylesheet" href="title-screen.css?v=20261010-ornate-title">
+    <link rel="preload" as="image" href="life-heart-broken.jpg?v=20261017">
+    <link rel="preload" as="image" href="salon-background.png?v=20261019" fetchpriority="low">
   </head>
-  <body class="title-active">
+  <body class="royal-theme title-active">
     <section class="title-screen" id="titleScreen" aria-label="タイトル画面">
       <img class="title-screen-art" src="title-screen.png?v=20261020-b18cef3" alt="あと100年で日本人は全員佐藤さんになるらしい" width="1240" height="1754" fetchpriority="high">
       <button class="title-start" id="startButton" type="button"><span class="title-start-label">ゲームスタート</span></button>
     </section>
     <main class="game-shell" id="gameShell" hidden>
       <section class="top-bar" aria-label="ゲーム情報">
+        <a class="classic-link" href="classic.html">通常版</a>
         <div class="brand-lockup">
           <a class="brand-logo-link" href="https://gekidannoro.wixstudio.com/shidaisai2026" target="_blank" rel="noopener noreferrer" aria-label="公演サイトを開く（新しいタブ）" title="公演サイトを開く（新しいタブ）">
             <img class="brand-logo" src="performance-logo.png" alt="あと100年で日本人は全員佐藤さんになるらしい">
           </a>
           <div class="brand-copy">
             <p class="kicker">名古屋市立大学演劇部劇団鈍-NORO-<br>2026年度市大祭公演</p>
-            <button class="brand-subtitle brand-home" id="homeButton" type="button" aria-label="ブラウザ恋愛ゲーム" title="最初の画面に戻る">ブラウザ<wbr>恋愛ゲーム</button>
+            <button class="brand-title brand-home" id="homeButton" type="button" aria-label="ブラウザ恋愛ゲーム" title="最初の画面に戻る">ブラウザ<wbr>恋愛ゲーム</button>
+            <h1 class="sr-only" id="gameTitle">あと100年で全員佐藤さんになる恋愛ゲーム</h1>
           </div>
-          <h1 class="sr-only" id="gameTitle">あと100年で全員佐藤さんになる恋愛ゲーム</h1>
         </div>
         <button class="icon-button" id="resetButton" type="button" title="最初から">
           <span aria-hidden="true">↺</span>
           <span class="sr-only">最初から</span>
         </button>
+        <div class="life-meter" id="lifeMeter" role="img" aria-label="残りライフ 3 / 3" aria-live="polite" hidden></div>
       </section>
 
       <section class="stage" id="stage" aria-live="polite">
         <div class="background-sign">
-          <span>婚活相談所</span>
+          <span>結婚相談所</span>
           <strong>Marry Go Round</strong>
         </div>
+        <p class="selection-prompt">キャラクターを選択してください</p>
 
         <aside class="character-card" id="characterCard">
           <div class="portrait portrait-default" id="portrait" aria-hidden="true">

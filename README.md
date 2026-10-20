@@ -7,6 +7,7 @@ GitHub PagesやNetlifyでそのまま公開できる静的サイトです。
 1. GitHubで新しいリポジトリを作ります。
 2. このフォルダ内のファイルをすべてアップロードします。
    - `index.html`
+   - `classic.html`
    - `style.css`
    - `otome.html`
    - `otome-original.html`
@@ -75,17 +76,17 @@ GitHub上で `game-data.js` を編集して `Commit changes` すると、GitHub 
 
 `Private` のままでは、URLを知っていても一般の人は遊べません。一般公開後は、Netlifyへのログインなしで遊べます。
 
-Netlifyでは乙女ゲーム版がトップページに表示されます。通常版は `index.html` から開けます。GitHub Pagesの既存URLは変わりません。
+トップページの `index.html` は最新版の乙女ゲーム版です。通常版は `classic.html` から開けます。
 
 連携後は、GitHubでファイルを編集してコミットするとNetlifyも自動更新されます。無料枠には利用量の上限があります。
 
 ## Cloudflare Pagesで手動公開
 
 1. CloudflareのPagesプロジェクトで `Create a new deployment` を開きます。
-2. 最新の公開用ZIP、または `index.html` と `_redirects` が直接入っているフォルダをアップロードします。
+2. 最新の公開用ZIP、または `index.html` が直接入っているフォルダをアップロードします。
 3. Productionへのデプロイを完了します。
 
-`_redirects` の `/ /otome.html 200` により、末尾なしのURLで最新版の乙女ゲームを表示します。アドレスバーに `/otome` は追加されません。通常版や元デザインのファイルはそのまま残しています。
+`index.html` 自体が最新版の乙女ゲームなので、転送設定なしで末尾なしのURLから表示できます。`otome.html` も同じ内容です。通常版は `classic.html`、元の乙女デザインは `otome-original.html` に残しています。`_redirects` には転送ルールを入れていません。
 
 手動公開の場合、GitHubを変更しただけではCloudflare側は更新されません。変更のたびに最新のファイル一式を再アップロードしてください。
 
@@ -93,5 +94,6 @@ Netlifyでは乙女ゲーム版がトップページに表示されます。通�
 - Cloudflare Pages（乙女ゲーム版）：https://gekidannoro-shidaisai2026-game.pages.dev/
 - Netlify（乙女ゲーム版）：https://gekidannoro-shidaisai2026.netlify.app/
 - 元の乙女デザイン：https://gekidannoro-shidaisai2026.netlify.app/otome-original.html
-- 初期版：https://yukina-itoh.github.io/sato-love-game/
+- トップページ（乙女ゲーム版）：https://yukina-itoh.github.io/sato-love-game/
+- 初期版：https://yukina-itoh.github.io/sato-love-game/classic.html
 - 乙女ゲーム版：https://yukina-itoh.github.io/sato-love-game/otome.html
