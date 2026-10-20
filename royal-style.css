@@ -364,6 +364,23 @@ html:has(body.royal-theme.route-active) {
   margin: 0;
 }
 
+@media (min-width: 921px), (orientation: portrait) {
+  .royal-theme .stage.is-route-active.is-ending {
+    grid-template-rows: minmax(min-content, 1fr);
+  }
+
+  /* Let longer results grow upward without moving or shrinking the portrait. */
+  .royal-theme .stage.is-route-active.is-ending .character-card,
+  .royal-theme .stage.is-route-active.is-ending .dialogue-panel {
+    grid-area: 1 / 1;
+  }
+
+  .royal-theme .stage.is-route-active.is-ending .dialogue-panel {
+    align-self: end;
+    margin-top: 64px;
+  }
+}
+
 .royal-theme .stage.is-route-active .message-box {
   min-height: 132px;
   padding: 34px 28px 22px;
