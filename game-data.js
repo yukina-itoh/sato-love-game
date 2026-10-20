@@ -232,7 +232,7 @@ window.GAME_DATA = {
           choices: [
             {
               text: "難しい質問ですね。私には分かりません。",
-              reaction: "正直に言ってくれてうれしいよ。\n今から見つけてあげる。",
+              reaction: "正直に言ってくれてうれしいよ。\n今から見せつけてあげる。",
               mood: 1,
               correct:true
             },
