@@ -79,7 +79,18 @@ Netlifyでは乙女ゲーム版がトップページに表示されます。通�
 
 連携後は、GitHubでファイルを編集してコミットするとNetlifyも自動更新されます。無料枠には利用量の上限があります。
 
+## Cloudflare Pagesで手動公開
+
+1. CloudflareのPagesプロジェクトで `Create a new deployment` を開きます。
+2. 最新の公開用ZIP、または `index.html` と `_redirects` が直接入っているフォルダをアップロードします。
+3. Productionへのデプロイを完了します。
+
+`_redirects` の `/ /otome.html 200` により、末尾なしのURLで最新版の乙女ゲームを表示します。アドレスバーに `/otome` は追加されません。通常版や元デザインのファイルはそのまま残しています。
+
+手動公開の場合、GitHubを変更しただけではCloudflare側は更新されません。変更のたびに最新のファイル一式を再アップロードしてください。
+
 ## URL
+- Cloudflare Pages（乙女ゲーム版）：https://gekidannoro-shidaisai2026-game.pages.dev/
 - Netlify（乙女ゲーム版）：https://gekidannoro-shidaisai2026.netlify.app/
 - 元の乙女デザイン：https://gekidannoro-shidaisai2026.netlify.app/otome-original.html
 - 初期版：https://yukina-itoh.github.io/sato-love-game/
