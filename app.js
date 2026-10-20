@@ -339,7 +339,7 @@ function showEnding() {
   const key = state.correct === total ? "happy" : state.correct === 0 ? "bad" : "good";
   const ending = GAME_DATA.endings[key];
   const lines = character.endingLines[key];
-  const line = Array.isArray(lines) ? lines.join("\n\n") : lines;
+  const line = Array.isArray(lines) ? lines.join("\n") : lines;
   const note = ending.note || `${state.correct}問正解`;
   els.stage.classList.add("is-ending");
   setStandingImage(character.standingImage);
