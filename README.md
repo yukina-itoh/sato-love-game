@@ -46,6 +46,8 @@ GitHub PagesやNetlifyでそのまま公開できる静的サイトです。
 
 ブラウザのアイコンは `site-icon.jpg` です。画像を交換するときは、`index.html` と `otome.html` のアイコンURLの `?v=` も更新すると、古いアイコンのキャッシュを避けられます。
 
+好感度アップとHAPPYの色は、`royal-style.css` の `[data-ending="happy"] .message-box` を含むルールの `--ending-color` でまとめて変更できます。好感度ダウンとBADは、同様に `[data-ending="bad"] .message-box` の `--ending-color` を変更します。会話中の名前欄やウィンドウの縁の色は変わりません。
+
 ボタンの金色の装飾は `start-button-frame.svg` です。Safariの時計・URLバーはページの余白ではないため、CSSでは削除できません。iPhoneではSafariから「ホーム画面に追加」し、「ウェブアプリとして開く」が表示される場合はオンにして、そのアイコンから開くとURLバーなしで遊べます。iPhone実機での全画面表示は未確認です。
 
 - 攻略対象を変える: `characters`
