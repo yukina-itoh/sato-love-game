@@ -494,25 +494,25 @@ html:has(body.royal-theme.route-active) {
 }
 
 .royal-theme .stage.is-route-active.is-ending .message-box {
-  --ending-color: #43806d;
+  --ending-color: #f4f19a;
   border-color: var(--ending-color);
   box-shadow: 0 5px 16px rgb(61 41 45 / 0.1);
 }
 
 .royal-theme .stage.is-route-active.is-ending[data-ending="happy"] .message-box {
-  --ending-color: #c24d7f;
+  --ending-color: #ff7c7c;
 }
 
 .royal-theme .stage.is-route-active.is-ending[data-ending="bad"] .message-box {
-  --ending-color: var(--dialogue-down);
+  --ending-color: #9ab6f4;
 }
 
 .royal-theme .stage.is-route-active.is-ending #message > .reaction-status {
-  color: var(--ending-color);
+  color: var(--ink);
 }
 
 .royal-theme .stage.is-route-active.is-ending .speaker {
-  color: #fff;
+  color: var(--ink);
   background: var(--ending-color);
   border-color: var(--ending-color);
 }
