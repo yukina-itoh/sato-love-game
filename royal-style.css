@@ -494,7 +494,7 @@ html:has(body.royal-theme.route-active) {
 }
 
 .royal-theme .stage.is-route-active.is-ending .message-box {
-  --ending-color: #f4bf75;
+  --ending-color: #efB05d;
   border-color: var(--ending-color);
   box-shadow: 0 5px 16px rgb(61 41 45 / 0.1);
 }
@@ -504,7 +504,7 @@ html:has(body.royal-theme.route-active) {
 }
 
 .royal-theme .stage.is-route-active.is-ending[data-ending="bad"] .message-box {
-  --ending-color: #9ab6f4;
+  --ending-color: #5e8cd1;
 }
 
 .royal-theme .stage.is-route-active.is-ending #message > .reaction-status {
