@@ -394,7 +394,9 @@ function showEnding() {
   const line = Array.isArray(lines) ? lines.join("\n") : lines;
   const note = ending.note || `${state.correct}問正解`;
   els.stage.classList.add("is-ending");
-  setStandingImage(character.standingImage);
+  const endingImage = key === "happy" ? character.upStandingImage
+    : key === "bad" ? character.downStandingImage : character.standingImage;
+  setStandingImage(endingImage || character.standingImage);
 
   setDialogue({
     speaker: ending.label,
