@@ -273,6 +273,7 @@ html:has(body.royal-theme.route-active) {
   --dialogue-pink-hue: 352.6153846154;
   --dialogue-pink: hsl(var(--dialogue-pink-hue) 80% 78%);
   --dialogue-pink-dark: hsl(var(--dialogue-pink-hue) 45% 40%);
+  --dialogue-down: #52667a;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: minmax(min-content, 1fr) auto;
   gap: 0;
@@ -488,8 +489,22 @@ html:has(body.royal-theme.route-active) {
 }
 
 .royal-theme .message .reaction-status-down {
-  color: #52667a;
+  color: var(--dialogue-down);
   font-weight: 700;
+}
+
+.royal-theme .stage.is-route-active.is-ending .message-box {
+  --ending-color: var(--dialogue-pink-dark);
+}
+
+.royal-theme .stage.is-route-active.is-ending .message-box:has(> #message > .reaction-status-down) {
+  --ending-color: var(--dialogue-down);
+}
+
+.royal-theme .stage.is-route-active.is-ending .speaker {
+  color: #fff;
+  background: var(--ending-color);
+  border-color: var(--ending-color);
 }
 
 .royal-theme .stage.is-route-active .choices {
