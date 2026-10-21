@@ -513,6 +513,10 @@ html:has(body.royal-theme.route-active) {
   border-color: var(--ending-color);
 }
 
+.royal-theme .stage.is-route-active.is-ending[data-ending="bad"] .speaker {
+  color: #fff;
+}
+
 .royal-theme .stage.is-route-active .choices {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-rows: auto;

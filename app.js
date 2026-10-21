@@ -403,7 +403,7 @@ function showEnding() {
 
   setDialogue({
     speaker: ending.label,
-    message: `\n${line}`,
+    message: line,
     feedback: {
       label: `${ending.title} (${note})`,
       tone: key === "bad" ? "down" : "up",
