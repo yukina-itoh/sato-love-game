@@ -110,9 +110,9 @@ function updateLives() {
     const filled = index < state.lives;
     const broken = state.pendingLifeLoss && index === state.lives - 1;
     heart.className = `life-heart${broken ? " is-broken" : filled ? "" : " is-empty"}`;
-    heart.src = broken
-      ? "life-heart-broken.jpg?v=20261017"
-      : filled ? "life-heart-full.jpg?v=20261016-v2" : "life-heart-empty.jpg?v=20261016-v2";
+    heart.src = filled && !broken
+      ? "life-heart-full.jpg?v=20261016-v2"
+      : "life-heart-broken.jpg?v=20261021-pink";
     heart.alt = "";
     heart.draggable = false;
     heart.width = 30;
