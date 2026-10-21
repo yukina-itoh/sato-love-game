@@ -372,6 +372,40 @@ html:has(body.royal-theme.route-active) {
   margin: 0;
 }
 
+.royal-theme .dialogue-sizer {
+  display: none;
+}
+
+/* Keep conversation rows stable without constraining result text or buttons. */
+.royal-theme .stage.is-route-active:not(.is-ending) .dialogue-sizer {
+  display: contents;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.royal-theme .stage.is-route-active:not(.is-ending) .message-box {
+  grid-area: 1 / 1;
+}
+
+.royal-theme .stage.is-route-active:not(.is-ending) .dialogue-panel > .choices,
+.royal-theme .dialogue-choice-sizer {
+  grid-area: 2 / 1;
+}
+
+.royal-theme .dialogue-message-sizer,
+.royal-theme .dialogue-choice-sizer {
+  display: grid;
+}
+
+.royal-theme .dialogue-message-sizer .message,
+.royal-theme .dialogue-choice-sizer .choices {
+  grid-area: 1 / 1;
+}
+
+.royal-theme .stage.is-route-active:not(.is-ending) .choices {
+  align-content: start;
+}
+
 @media (min-width: 921px), (orientation: portrait) {
   .royal-theme .stage.is-route-active.is-ending {
     grid-template-rows: minmax(min-content, 1fr);

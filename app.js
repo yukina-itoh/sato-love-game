@@ -28,6 +28,7 @@ const els = {
   sceneLabel: document.querySelector("#sceneLabel"),
   scoreLabel: document.querySelector("#scoreLabel"),
   speaker: document.querySelector("#speaker"),
+  dialoguePanel: document.querySelector(".dialogue-panel"),
   message: document.querySelector("#message"),
   choices: document.querySelector("#choices")
 };
@@ -122,9 +123,8 @@ function updateLives() {
   }));
 }
 
-function setDialogue({ speaker, message, scene, score, feedback }) {
-  els.speaker.textContent = speaker;
-  els.message.textContent = message;
+function renderMessage(target, message, feedback) {
+  target.textContent = message;
   if (feedback) {
     const status = document.createElement("span");
     status.className = `reaction-status reaction-status-${feedback.tone}`;
@@ -132,8 +132,59 @@ function setDialogue({ speaker, message, scene, score, feedback }) {
     status.textContent = `${brackets[0]}${feedback.label}${brackets[1]}\n`;
     const line = document.createElement("span");
     line.textContent = message;
-    els.message.replaceChildren(status, line);
+    target.replaceChildren(status, line);
   }
+}
+
+function reserveDialogueSpace(character) {
+  if (!document.body.classList.contains("royal-theme") || !els.dialoguePanel) return;
+  let sizer = els.dialoguePanel.querySelector(".dialogue-sizer");
+  if (!sizer) {
+    sizer = document.createElement("div");
+    sizer.className = "dialogue-sizer";
+    sizer.setAttribute("aria-hidden", "true");
+    sizer.inert = true;
+    els.dialoguePanel.append(sizer);
+  }
+
+  // Invisible grid items reserve the largest wrapped text and choice set.
+  const messages = document.createElement("div");
+  messages.className = "message-box dialogue-message-sizer";
+  const addMessage = (message, feedback) => {
+    const line = document.createElement("p");
+    line.className = "message";
+    renderMessage(line, message, feedback);
+    messages.append(line);
+  };
+  addMessage(character.opening);
+  const choices = document.createElement("div");
+  choices.className = "dialogue-choice-sizer";
+  for (const question of character.questions) {
+    addMessage(question.prompt);
+    const pair = document.createElement("div");
+    pair.className = "choices";
+    for (const choice of question.choices) {
+      const isDown = !choice.correct && choice.mood !== 0;
+      addMessage(choice.reaction, {
+        label: choice.correct ? "好感度アップ" : isDown ? "好感度ダウン" : "反応は普通",
+        tone: choice.correct ? "up" : isDown ? "down" : "neutral",
+        brackets: choice.correct || isDown ? "【】" : "［］"
+      });
+      const option = document.createElement("button");
+      option.type = "button";
+      option.className = "choice-button";
+      option.tabIndex = -1;
+      option.innerHTML = choice.text;
+      pair.append(option);
+    }
+    choices.append(pair);
+  }
+  sizer.replaceChildren(messages, choices);
+}
+
+function setDialogue({ speaker, message, scene, score, feedback }) {
+  els.speaker.textContent = speaker;
+  renderMessage(els.message, message, feedback);
   els.message.scrollTop = 0;
   els.choices.scrollTop = 0;
   els.sceneLabel.textContent = scene;
@@ -261,6 +312,7 @@ function startRoute(id) {
   els.stage.classList.remove("is-selecting");
   if (document.body.classList.contains("royal-theme")) els.salonLabel.textContent = "結婚相談所";
   setProfile(character);
+  reserveDialogueSpace(character);
   els.choices.className = "choices";
   setDialogue({
     speaker: character.name,
