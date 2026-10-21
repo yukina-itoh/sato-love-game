@@ -504,7 +504,7 @@ html:has(body.royal-theme.route-active) {
 }
 
 .royal-theme .stage.is-route-active.is-ending[data-ending="bad"] .message-box {
-  --ending-color: #5e8cd1;
+  --ending-color: #3A66A8;
 }
 
 .royal-theme .stage.is-route-active.is-ending #message > .reaction-status {
