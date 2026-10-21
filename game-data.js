@@ -119,7 +119,7 @@ window.GAME_DATA = {
       opening: "はじめまして。私は勅使河原俊紀です。",
       questions: [
         {
-          prompt: "はじめまして。私は勅使河原俊紀です。",
+          prompt: "「君は私の名前を聞いてどう思ったんだい？」",
           choices: [
             {
               text: "素敵な名前ですね！",
@@ -127,7 +127,7 @@ window.GAME_DATA = {
               mood: -1
             },
             {
-              text: "うぉー！ めっちゃ変な名前！！",
+              text: "うぉー！ めっちゃ変！！",
               reaction: "HAHAHA！Obrigado！(ありがとう)",
               mood: 1,
               correct: true
