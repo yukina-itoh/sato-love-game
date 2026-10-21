@@ -494,11 +494,21 @@ html:has(body.royal-theme.route-active) {
 }
 
 .royal-theme .stage.is-route-active.is-ending .message-box {
-  --ending-color: var(--dialogue-pink-dark);
+  --ending-color: #43806d;
+  border-color: var(--ending-color);
+  box-shadow: 0 5px 16px rgb(61 41 45 / 0.1);
 }
 
-.royal-theme .stage.is-route-active.is-ending .message-box:has(> #message > .reaction-status-down) {
+.royal-theme .stage.is-route-active.is-ending[data-ending="happy"] .message-box {
+  --ending-color: #c24d7f;
+}
+
+.royal-theme .stage.is-route-active.is-ending[data-ending="bad"] .message-box {
   --ending-color: var(--dialogue-down);
+}
+
+.royal-theme .stage.is-route-active.is-ending #message > .reaction-status {
+  color: var(--ending-color);
 }
 
 .royal-theme .stage.is-route-active.is-ending .speaker {

@@ -204,6 +204,7 @@ function showStart() {
   state.pendingLifeLoss = false;
   state.answered = false;
   els.stage.classList.remove("is-ending");
+  els.stage.removeAttribute("data-ending");
   const illustrated = document.body.classList.contains("royal-theme");
   els.stage.classList.toggle("is-selecting", illustrated);
   if (illustrated) els.salonLabel.textContent = "結婚相談所";
@@ -309,6 +310,7 @@ function startRoute(id) {
   state.pendingLifeLoss = false;
   state.answered = false;
   els.stage.classList.remove("is-ending");
+  els.stage.removeAttribute("data-ending");
   els.stage.classList.remove("is-selecting");
   if (document.body.classList.contains("royal-theme")) els.salonLabel.textContent = "結婚相談所";
   setProfile(character);
@@ -394,6 +396,7 @@ function showEnding() {
   const line = Array.isArray(lines) ? lines.join("\n") : lines;
   const note = ending.note || `${state.correct}問正解`;
   els.stage.classList.add("is-ending");
+  els.stage.setAttribute("data-ending", key);
   const endingImage = key === "happy" ? character.upStandingImage
     : key === "bad" ? character.downStandingImage : character.standingImage;
   setStandingImage(endingImage || character.standingImage);
