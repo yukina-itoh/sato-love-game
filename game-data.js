@@ -41,7 +41,7 @@ window.GAME_DATA = {
       opening: "はじめまして。僕は佐藤太郎です。",
       questions: [
         {
-          prompt: "名前を聞いたあなたの第一声は？",
+          prompt: "はじめまして。僕は佐藤太郎です。",
           choices: [
             {
               text: "とても素敵な名前ですね。",
@@ -116,19 +116,19 @@ window.GAME_DATA = {
       downStandingImage: "teshigawara-standing-down.png?v=20261019-finished-art",
       color: "#2c7f68",
       stats: ["冒険値 MAX", "アマゾン依存度 低", "海外経験 あり"],
-      opening: "初めまして。私は勅使河原俊紀です。",
+      opening: "はじめまして。私は勅使河原俊紀です。",
       questions: [
         {
-          prompt: "珍しい名前を聞いたあなたは？",
+          prompt: "はじめまして。私は勅使河原俊紀です。",
           choices: [
             {
               text: "素敵な名前ですね！",
-              reaction: "あぁ！",
+              reaction: "そうかな……？",
               mood: -1
             },
             {
-              text: "うぉー！ めっちゃ変！！",
-              reaction: "良いリアクションだ！ HAHAHA",
+              text: "うぉー！ めっちゃ変な名前！！",
+              reaction: "HAHAHA！Obrigado！(ありがとう)",
               mood: 1,
               correct: true
             }
