@@ -304,6 +304,13 @@ html:has(body.royal-theme.route-active) {
   user-select: none;
 }
 
+.royal-theme .life-heart:is(.is-broken, .is-empty) {
+  /* Match the artwork height; wider images retain the same slot centers. */
+  flex-basis: 46.5px;
+  width: 46.5px;
+  margin-inline: -4.5px;
+}
+
 .royal-theme .stage.is-route-active .background-sign {
   display: none;
   position: absolute;

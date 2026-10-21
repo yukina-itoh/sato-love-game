@@ -112,7 +112,7 @@ function updateLives() {
     heart.className = `life-heart${broken ? " is-broken" : filled ? "" : " is-empty"}`;
     heart.src = filled && !broken
       ? "life-heart-full.jpg?v=20261016-v2"
-      : "life-heart-broken.jpg?v=20261021-pink";
+      : "life-heart-broken.jpg?v=20261021-balanced";
     heart.alt = "";
     heart.draggable = false;
     heart.width = 30;
