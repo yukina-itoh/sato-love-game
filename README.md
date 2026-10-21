@@ -17,6 +17,7 @@ GitHub PagesやNetlifyでそのまま公開できる静的サイトです。
    - `game-data.js`
    - `title-screen.css`
    - `title-screen.png`
+   - `site-icon.jpg`
    - `start-button-frame.svg`
    - `.nojekyll`
 3. リポジトリの `Settings` → `Pages` を開きます。
@@ -42,6 +43,8 @@ GitHub PagesやNetlifyでそのまま公開できる静的サイトです。
 ## タイトル画面・会話の編集
 
 タイトル画面の画像は `title-screen.png`、赤いスタートボタンの色・位置・大きさは `title-screen.css` で変更できます。画像は画面の高さに合わせて表示し、スマホでは左右だけを切ります。「ゲームスタート」で相手選択へ進み、ヘッダーのタイトルや「最初から」でタイトル画面に戻ります。
+
+ブラウザのアイコンは `site-icon.jpg` です。画像を交換するときは、`index.html` と `otome.html` のアイコンURLの `?v=` も更新すると、古いアイコンのキャッシュを避けられます。
 
 ボタンの金色の装飾は `start-button-frame.svg` です。Safariの時計・URLバーはページの余白ではないため、CSSでは削除できません。iPhoneではSafariから「ホーム画面に追加」し、「ウェブアプリとして開く」が表示される場合はオンにして、そのアイコンから開くとURLバーなしで遊べます。iPhone実機での全画面表示は未確認です。
 
