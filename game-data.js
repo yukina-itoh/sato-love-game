@@ -124,13 +124,13 @@ window.GAME_DATA = {
             {
               text: "素敵な名前ですね！",
               reaction: "そうかな……？",
-              mood: -1
+              mood: 1,
+              correct: true
             },
             {
               text: "うぉー！ めっちゃ変！！",
               reaction: "HAHAHA！Obrigado！(ありがとう)",
-              mood: 1,
-              correct: true
+              mood: -1
             }
           ]
         },
